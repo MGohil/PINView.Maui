@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="PINViewSample.Views.SampleViews.PINInputTypeSampleView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:PINView="clr-namespace:PINView;assembly=PINView"
+    xmlns:system="clr-namespace:System;assembly=netstandard">
+    <ContentView.Content>
+        <Frame BorderColor="{StaticResource ColorC}" Style="{StaticResource SampleViewsContainerFrameStyle}">
+            <StackLayout>
+
+                <Label BackgroundColor="{StaticResource LightColorC}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="PINInputType" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Type : Enum [ Numeric, AlphaNumeric ]" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Default : Numeric" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <StackLayout Padding="0,20">
+                    <Label HorizontalTextAlignment="Center" Text="PINInputType = Numeric (Default)" />
+
+                    <PINView:PINView
+                        x:Name="pinView1"
+                        BoxBackgroundColor="{StaticResource LightColorC}"
+                        IsPassword="False"
+                        PINInputType="Numeric"
+                        PINValue="1234"
+                        Style="{StaticResource PINViewStyle}"
+                        Color="{StaticResource ColorC}" />
+
+                    <Label
+                        Margin="0,20,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="PINInputType = AlphaNumeric" />
+
+                    <PINView:PINView
+                        x:Name="pinView2"
+                        BoxBackgroundColor="{StaticResource LightColorC}"
+                        IsPassword="False"
+                        PINInputType="AlphaNumeric"
+                        PINValue="ABCD"
+                        Style="{StaticResource PINViewStyle}"
+                        Color="{StaticResource ColorC}" />
+                </StackLayout>
+
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

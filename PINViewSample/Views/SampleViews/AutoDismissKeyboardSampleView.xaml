@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="PINViewSample.Views.SampleViews.AutoDismissKeyboardSampleView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:PINView="clr-namespace:PINView;assembly=PINView"
+    xmlns:system="clr-namespace:System;assembly=netstandard">
+    <ContentView.Content>
+        <Frame BorderColor="{StaticResource ColorB}" Style="{StaticResource SampleViewsContainerFrameStyle}">
+            <VerticalStackLayout Spacing="0">
+                <Label BackgroundColor="{StaticResource LightColorB}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="AutoDismissKeyboard" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="When set to True, Keyboard will be automatically dismissed when all charecter input entries completed" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Type all chars to see this behaviour" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Type : Boolean" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Default : False" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <VerticalStackLayout Padding="0,20">
+                    <Label HorizontalTextAlignment="Center" Text="AutoDismissKeyboard = False (Default)" />
+                    <PINView:PINView
+                        x:Name="pinView1"
+                        AutoDismissKeyboard="False"
+                        BoxBackgroundColor="{StaticResource LightColorB}"
+                        Style="{StaticResource PINViewStyle}"
+                        Color="{StaticResource ColorB}" />
+
+
+                    <Label
+                        Margin="0,20,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="AutoDismissKeyboard = True" />
+                    <PINView:PINView
+                        x:Name="pinView2"
+                        AutoDismissKeyboard="True"
+                        BoxBackgroundColor="{StaticResource LightColorB}"
+                        Style="{StaticResource PINViewStyle}"
+                        Color="{StaticResource ColorB}" />
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

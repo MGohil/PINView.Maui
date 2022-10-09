@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PINViewSample.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+    xmlns:pinView="clr-namespace:PINView;assembly=PINView"
+    xmlns:vm="clr-namespace:PINViewSample.ViewModels"
+    Title="{Binding Title}"
+    ios:Page.UseSafeArea="true">
+    <ContentPage.BindingContext>
+        <vm:MainPageViewModel />
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Padding="30" Spacing="30">
+
+        <Button
+            Command="{Binding GoToPINLoginPageCommand}"
+            Style="{StaticResource ButtonStyle}"
+            Text="PIN Login" />
+
+        <Button
+            Command="{Binding GoToCreatePINPageCommand}"
+            Style="{StaticResource ButtonStyle}"
+            Text="Create PIN" />
+
+        <Button
+            Command="{Binding GoToChangePINPageCommand}"
+            Style="{StaticResource ButtonStyle}"
+            Text="Change PIN" />
+
+        <Button
+            BackgroundColor="#E5E5FF"
+            BorderColor="Blue"
+            Command="{Binding GoToPINSamplesPageCommand}"
+            Style="{StaticResource ButtonStyle}"
+            Text="All Samples"
+            TextColor="Blue" />
+    </VerticalStackLayout>
+</ContentPage>
