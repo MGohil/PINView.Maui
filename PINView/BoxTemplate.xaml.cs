@@ -13,7 +13,7 @@ public partial class BoxTemplate : ContentView
 
     public Frame Box => this.box;
     public Grid ValueContainer => this.valueContainer;
-    public Frame Dot => this.dot;
+    public Border Dot => this.dot;
     public Label CharLabel => this.charLabel;
 
     public BoxTemplate()
@@ -80,7 +80,7 @@ public partial class BoxTemplate : ContentView
     {
         if (shapeType == BoxShapeType.Circle)
         {
-            Box.CornerRadius = (float)HeightRequest / 2;
+            Box.CornerRadius = (float)Box.HeightRequest / 2;
         }
         else if (shapeType == BoxShapeType.Squere)
         {

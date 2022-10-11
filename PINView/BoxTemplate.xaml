@@ -20,23 +20,21 @@
         WidthRequest="{x:Static helpers:Constants.DefaultBoxSize}">
         <Grid
             x:Name="valueContainer"
-            HorizontalOptions="Center"
-            VerticalOptions="Center">
-            <!--  Default Visible  -->
-            <Frame
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+
+            <Border
                 x:Name="dot"
-                Padding="0"
                 BackgroundColor="{x:Static helpers:Constants.DefaultColor}"
-                BorderColor="Transparent"
-                CornerRadius="{Binding Converter={StaticResource SizeToCornerRadiusConverter}, Source={x:Static helpers:Constants.DefaultDotSize}}"
-                HasShadow="False"
                 HeightRequest="{x:Static helpers:Constants.DefaultDotSize}"
                 HorizontalOptions="Center"
                 Scale="1"
+                Stroke="Transparent"
+                StrokeShape="RoundRectangle 20,20,20,20"
+                StrokeThickness="1"
                 VerticalOptions="Center"
                 WidthRequest="{x:Static helpers:Constants.DefaultDotSize}" />
 
-            <!--  Default Hidden  -->
             <Label
                 x:Name="charLabel"
                 Margin="{OnPlatform WinUI='0,0,0,2',
