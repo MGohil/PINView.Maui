@@ -35,15 +35,21 @@ public partial class BoxTemplate : ContentView
         {
             // TODO: This does not work
             //valueContainer.ScaleTo(0, 100);
-
-            // This works if we wrap shrink animation in Task and then run on ui thread
-            Task.Run(() =>
+            if (DeviceInfo.Platform == DevicePlatform.Android)
             {
-                MainThread.BeginInvokeOnMainThread(async () =>
+                // This works if we wrap shrink animation in Task and then run on ui thread
+                Task.Run(() =>
                 {
-                    await valueContainer.ScaleTo(0, 50);
+                    MainThread.BeginInvokeOnMainThread(() =>
+                    {
+                        valueContainer.ScaleTo(0, 50);
+                    });
                 });
-            });
+            }
+            else
+            {
+                valueContainer.ScaleTo(0, 50);
+            }
         }
         catch (Exception ex)
         {
@@ -69,7 +75,6 @@ public partial class BoxTemplate : ContentView
     /// <summary>
     /// Applies the Corner Radius to the PIN Box based on the ShapeType
     /// </summary>
-    /// <param name="boxTemplate"></param>
     /// <param name="shapeType"></param>
     public void SetRadius(BoxShapeType shapeType)
     {

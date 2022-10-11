@@ -48,13 +48,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\PINView\PINView\PINView.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Remove="Resources\Images\" />
-	</ItemGroup>
-	<ItemGroup>
 	  <Folder Include="Resources\Images\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\PINView\PINView.csproj" />
 	</ItemGroup>
 </Project>

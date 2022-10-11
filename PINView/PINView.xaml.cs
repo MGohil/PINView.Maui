@@ -143,13 +143,20 @@ namespace PINView
             boxTemplate.WidthRequest = BoxSize;
             boxTemplate.Box.BackgroundColor = BoxBackgroundColor;
             boxTemplate.CharLabel.FontSize = BoxSize / 2;
-            
-            // Added TapGuesture to all components of the Box so that if we tap anywhere
-            // It still gets the focus. In Android things are not working as expected otherwise.
-            boxTemplate.Box.GestureRecognizers.Add(boxTapGestureRecognizer);
-            boxTemplate.ValueContainer.GestureRecognizers.Add(boxTapGestureRecognizer);
-            boxTemplate.Dot.GestureRecognizers.Add(boxTapGestureRecognizer);
-            boxTemplate.CharLabel.GestureRecognizers.Add(boxTapGestureRecognizer);
+
+            if (DeviceInfo.Platform == DevicePlatform.Android)
+            {
+                // Added TapGuesture to all components of the Box so that if we tap anywhere
+                // It still gets the focus. In Android things are not working as expected otherwise.
+                boxTemplate.Box.GestureRecognizers.Add(boxTapGestureRecognizer);
+                boxTemplate.ValueContainer.GestureRecognizers.Add(boxTapGestureRecognizer);
+                boxTemplate.Dot.GestureRecognizers.Add(boxTapGestureRecognizer);
+                boxTemplate.CharLabel.GestureRecognizers.Add(boxTapGestureRecognizer);
+            }
+            else
+            { 
+                boxTemplate.GestureRecognizers.Add(boxTapGestureRecognizer);
+            }
 
             boxTemplate.BoxFocusColor = BoxFocusColor;
             boxTemplate.FocusAnimationType = BoxFocusAnimation;
