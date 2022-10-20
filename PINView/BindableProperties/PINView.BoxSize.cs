@@ -36,8 +36,13 @@ namespace PINView
             control.PINBoxContainer.Children.ToList().ForEach(x =>
             {
                 var boxTemplate = (BoxTemplate)x;
+
+                boxTemplate.HeightRequest = (double)newValue;
+                boxTemplate.WidthRequest = (double)newValue;
+
                 boxTemplate.Box.HeightRequest = (double)newValue;
                 boxTemplate.Box.WidthRequest = (double)newValue;
+                
                 boxTemplate.CharLabel.FontSize = ((double)newValue / 2);
                 boxTemplate.SetRadius(control.BoxShape);
             });

@@ -48,7 +48,6 @@
                         x:Name="pinView3"
                         Margin="0,15,0,0"
                         BoxSize="70"
-                        BoxSpacing="30"
                         PINLength="4"
                         PINValue="1234"
                         Style="{StaticResource PINViewStyle}" />
