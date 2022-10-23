@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PINView.Maui.Samples.Views.DashboardPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+    xmlns:local="clr-namespace:PINView.Maui.Samples"
+    xmlns:vm="clr-namespace:PINView.Maui.Samples.ViewModels"
+    Title="{Binding Title}"
+    ios:Page.UseSafeArea="true"
+    BackgroundColor="{DynamicResource PageBackgroundColor}">
+    <ContentPage.BindingContext>
+        <vm:DashboardPageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+
+            <Grid Margin="0,-6,0,0" VerticalOptions="Start">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="1" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="1" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="1" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <BoxView
+                    Grid.RowSpan="5"
+                    Grid.Column="1"
+                    Style="{StaticResource VerticalSeparatorLineStyle}" />
+                <BoxView
+                    Grid.Row="0"
+                    Grid.ColumnSpan="3"
+                    Style="{StaticResource HorizontalSeparatorLineStyle}" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="25"
+                    VerticalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Style="{StaticResource BigLabelStyle}" Text="36.75" />
+                            <Span Style="{StaticResource SubLabelStyle}" Text=" &#186;C" />
+                            <Span Text="&#x0a;" />
+                            <Span Style="{StaticResource SubLabelStyle}" Text="Temperature" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Margin="25"
+                    VerticalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Style="{StaticResource BigLabelStyle}" Text="560" />
+                            <Span Style="{StaticResource SubLabelStyle}" Text=" cal" />
+                            <Span Text="&#x0a;" />
+                            <Span Style="{StaticResource SubLabelStyle}" Text="Calories burned" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <BoxView
+                    Grid.Row="2"
+                    Grid.ColumnSpan="3"
+                    Style="{StaticResource HorizontalSeparatorLineStyle}" />
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Margin="25"
+                    VerticalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Style="{StaticResource BigLabelStyle}" Text="3350" />
+                            <Span Text="&#x0a;" />
+                            <Span Style="{StaticResource SubLabelStyle}" Text="Steps" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    Margin="25"
+                    VerticalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Style="{StaticResource BigLabelStyle}" Text="87" />
+                            <Span Style="{StaticResource SubLabelStyle}" Text=" bpm" />
+                            <Span Text="&#x0a;" />
+                            <Span Style="{StaticResource SubLabelStyle}" Text="Heart rate" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <BoxView
+                    Grid.Row="4"
+                    Grid.ColumnSpan="3"
+                    Style="{StaticResource HorizontalSeparatorLineStyle}" />
+            </Grid>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

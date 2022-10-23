@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="PINView.Maui.Samples.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <!--<ResourceDictionary Source="Resources/Styles/Styles.xaml" />-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+        <!--  Sets the colors of Navigationbar's (Toolbar's) TextColor and Background Color  -->
+        <!--  For ToolbarItems icon color, Android requires platform specific twiks which is handles separately by DependencyService  -->
+        <!--<Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="{DynamicResource NavigationBarColor}" />
+            <Setter Property="BarTextColor" Value="{DynamicResource PrimaryTintColor}" />
+        </Style>-->
+
+        <Style x:Key="BigLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="Large" />
+            <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
+        </Style>
+
+        <Style x:Key="SubLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="Small" />
+            <Setter Property="TextColor" Value="{DynamicResource SubTextColor}" />
+        </Style>
+        <Style x:Key="HorizontalSeparatorLineStyle" TargetType="BoxView">
+            <Setter Property="HeightRequest" Value="1" />
+            <Setter Property="BackgroundColor" Value="{DynamicResource SeparatorLineColor}" />
+        </Style>
+
+        <Style x:Key="VerticalSeparatorLineStyle" TargetType="BoxView">
+            <Setter Property="WidthRequest" Value="1" />
+            <Setter Property="BackgroundColor" Value="{DynamicResource SeparatorLineColor}" />
+        </Style>
+
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="BorderColor" Value="{DynamicResource PrimaryColor}" />
+            <Setter Property="TextColor" Value="{DynamicResource PrimaryDarkColor}" />
+            <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryLightColor}" />
+            <Setter Property="BorderWidth" Value="1" />
+            <Setter Property="HeightRequest" Value="50" />
+        </Style>
+
+        <Style x:Key="PINViewStyle" TargetType="pinView:PINView">
+            <Setter Property="BoxShape" Value="Circle" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="Color" Value="{DynamicResource PrimaryColor}" />
+            <Setter Property="BoxBackgroundColor" Value="{DynamicResource PrimaryLightColor}" />
+        </Style>
+
+        <Style x:Key="SampleViewsHeaderLabelStyle" TargetType="Label">
+            <Setter Property="Padding" Value="20" />
+            <Setter Property="FontSize" Value="Large" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryLightColor}" />
+        </Style>
+
+        <!--  Android : Frame is not clipping the content, So in android, CornerRadius is 0  -->
+        <Style x:Key="SampleViewsContainerFrameStyle" TargetType="Frame">
+            <Setter Property="IsClippedToBounds" Value="True" />
+            <Setter Property="Padding" Value="{OnPlatform Default=0, Android=2}" />
+            <Setter Property="Margin" Value="15,15,15,0" />
+            <Setter Property="CornerRadius" Value="{OnPlatform Default=10, Android=0}" />
+            <Setter Property="HasShadow" Value="False" />
+        </Style>
+
+    </Application.Resources>
+</Application>

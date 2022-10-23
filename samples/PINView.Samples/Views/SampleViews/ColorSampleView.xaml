@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="PINView.Maui.Samples.Views.SampleViews.ColorSampleView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
+    xmlns:system="clr-namespace:System;assembly=netstandard">
+    <ContentView.Content>
+        <Frame BorderColor="{StaticResource ColorE}" Style="{StaticResource SampleViewsContainerFrameStyle}">
+            <VerticalStackLayout>
+
+                <Label BackgroundColor="{StaticResource LightColorE}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Color" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Type : Color" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Default : Color.Accent" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <VerticalStackLayout Padding="0,20">
+                    <Label HorizontalTextAlignment="Center" Text="Color = Accent (Default)" />
+                    <pinView:PINView
+                        x:Name="pinView1"
+                        BoxBackgroundColor="Transparent"
+                        BoxShape="Circle"
+                        HorizontalOptions="Center"
+                        PINLength="5"
+                        PINValue="12345" />
+
+                    <Label
+                        Margin="0,20,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="Color = Green" />
+                    <pinView:PINView
+                        x:Name="pinView2"
+                        BoxBackgroundColor="Transparent"
+                        BoxShape="Circle"
+                        HorizontalOptions="Center"
+                        PINLength="5"
+                        PINValue="12345"
+                        Color="Green" />
+
+                    <Label
+                        Margin="0,20,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="Color = Blue" />
+                    <pinView:PINView
+                        x:Name="pinView3"
+                        BoxBackgroundColor="Transparent"
+                        BoxShape="Circle"
+                        HorizontalOptions="Center"
+                        PINLength="5"
+                        PINValue="12345"
+                        Color="Blue" />
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="PINView.Maui.Samples.Views.SampleViews.BoxBorderColorSampleView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
+    xmlns:system="clr-namespace:System;assembly=netstandard">
+    <ContentView.Content>
+        <Frame BorderColor="{StaticResource ColorB}" Style="{StaticResource SampleViewsContainerFrameStyle}">
+            <StackLayout Spacing="0">
+                <Label BackgroundColor="{StaticResource LightColorB}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="BoxBorderColor" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Type : Color" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Default : Uses value provided in Color Property" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <StackLayout Padding="0,20">
+
+                    <Label HorizontalTextAlignment="Center" Text="BoxBorderColor = Transparent" />
+                    <pinView:PINView
+                        BoxBackgroundColor="{StaticResource LightColorB}"
+                        BoxBorderColor="Transparent"
+                        BoxShape="Squere"
+                        HorizontalOptions="Center"
+                        IsPassword="True"
+                        PINLength="5"
+                        PINValue="12345"
+                        Color="{StaticResource ColorB}" />
+
+
+                    <Label
+                        Margin="0,15,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="BoxBorderColor = Green" />
+                    <pinView:PINView
+                        BoxBackgroundColor="Transparent"
+                        BoxBorderColor="Green"
+                        BoxShape="Squere"
+                        HorizontalOptions="Center"
+                        IsPassword="True"
+                        PINLength="5"
+                        PINValue="12345"
+                        Color="{StaticResource ColorB}" />
+
+
+
+                </StackLayout>
+
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

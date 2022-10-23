@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="PINView.Maui.Samples.Views.SampleViews.BoxSizeSampleView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
+    xmlns:system="clr-namespace:System;assembly=netstandard">
+    <ContentView.Content>
+        <Frame BorderColor="{StaticResource PrimaryColor}" Style="{StaticResource SampleViewsContainerFrameStyle}">
+            <VerticalStackLayout>
+                <Label BackgroundColor="{StaticResource PrimaryLightColor}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="BoxSize" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Type : double" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Default : 50" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <VerticalStackLayout Padding="0,20">
+                    <Label HorizontalTextAlignment="Center" Text="BoxSize = 30" />
+                    <pinView:PINView
+                        x:Name="pinView1"
+                        BoxSize="30"
+                        PINLength="4"
+                        PINValue="1234"
+                        Style="{StaticResource PINViewStyle}" />
+
+                    <Label
+                        Margin="0,20,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="BoxSize = 50 (Default)" />
+                    <pinView:PINView
+                        x:Name="pinView2"
+                        BoxSize="50"
+                        PINLength="4"
+                        PINValue="1234"
+                        Style="{StaticResource PINViewStyle}" />
+
+                    <Label
+                        Margin="0,20,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="BoxSize = 70" />
+                    <pinView:PINView
+                        x:Name="pinView3"
+                        Margin="0,15,0,0"
+                        BoxSize="70"
+                        PINLength="4"
+                        PINValue="1234"
+                        Style="{StaticResource PINViewStyle}" />
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

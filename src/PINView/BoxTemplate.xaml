@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="PINView.Maui.BoxTemplate"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:PINView.Maui.Converters"
+    xmlns:helpers="clr-namespace:PINView.Maui.Helpers">
+    <ContentView.Resources>
+        <converters:SizeToCornerRadiusConverter x:Key="SizeToCornerRadiusConverter" />
+    </ContentView.Resources>
+    <Frame
+        x:Name="box"
+        Padding="0"
+        BackgroundColor="{x:Static helpers:Constants.DefaultBoxBackgroundColor}"
+        BorderColor="{x:Static helpers:Constants.DefaultColor}"
+        CornerRadius="{Binding Converter={StaticResource SizeToCornerRadiusConverter}, Source={x:Static helpers:Constants.DefaultBoxSize}}"
+        HasShadow="False"
+        HeightRequest="{x:Static helpers:Constants.DefaultBoxSize}"
+        VerticalOptions="Center"
+        WidthRequest="{x:Static helpers:Constants.DefaultBoxSize}">
+        <Grid
+            x:Name="valueContainer"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+
+            <Border
+                x:Name="dot"
+                BackgroundColor="{x:Static helpers:Constants.DefaultColor}"
+                HeightRequest="{x:Static helpers:Constants.DefaultDotSize}"
+                HorizontalOptions="Center"
+                Scale="1"
+                Stroke="Transparent"
+                StrokeShape="RoundRectangle 20,20,20,20"
+                StrokeThickness="1"
+                VerticalOptions="Center"
+                WidthRequest="{x:Static helpers:Constants.DefaultDotSize}" />
+
+            <Label
+                x:Name="charLabel"
+                Margin="{OnPlatform WinUI='0,0,0,2',
+                                    Default='0'}"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Scale="1"
+                TextColor="{x:Static helpers:Constants.DefaultColor}"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center" />
+        </Grid>
+    </Frame>
+
+</ContentView>
+
