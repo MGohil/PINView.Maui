@@ -27,7 +27,7 @@ namespace PINView.Maui
             ((PINView)bindable).PINBoxContainer.Children.ToList().ForEach(x =>
             {
                 var boxTemplate = (BoxTemplate)x;
-                boxTemplate.Box.BackgroundColor = (Color)newValue;
+                boxTemplate.BoxBorder.BackgroundColor = (Color)newValue;
             });
         }
     }

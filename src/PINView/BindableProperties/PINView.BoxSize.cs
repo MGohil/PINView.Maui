@@ -40,8 +40,8 @@ namespace PINView.Maui
                 boxTemplate.HeightRequest = (double)newValue;
                 boxTemplate.WidthRequest = (double)newValue;
 
-                boxTemplate.Box.HeightRequest = (double)newValue;
-                boxTemplate.Box.WidthRequest = (double)newValue;
+                boxTemplate.BoxBorder.HeightRequest = (double)newValue;
+                boxTemplate.BoxBorder.WidthRequest = (double)newValue;
                 
                 boxTemplate.CharLabel.FontSize = ((double)newValue / 2);
                 boxTemplate.SetRadius(control.BoxShape);

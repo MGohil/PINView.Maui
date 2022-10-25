@@ -141,14 +141,14 @@ namespace PINView.Maui
             BoxTemplate boxTemplate = new BoxTemplate();
             boxTemplate.HeightRequest = BoxSize;
             boxTemplate.WidthRequest = BoxSize;
-            boxTemplate.Box.BackgroundColor = BoxBackgroundColor;
+            boxTemplate.BoxBorder.BackgroundColor = BoxBackgroundColor;
             boxTemplate.CharLabel.FontSize = BoxSize / 2;
 
             if (DeviceInfo.Platform == DevicePlatform.Android)
             {
                 // Added TapGuesture to all components of the Box so that if we tap anywhere
                 // It still gets the focus. In Android things are not working as expected otherwise.
-                boxTemplate.Box.GestureRecognizers.Add(boxTapGestureRecognizer);
+                boxTemplate.BoxBorder.GestureRecognizers.Add(boxTapGestureRecognizer);
                 boxTemplate.ValueContainer.GestureRecognizers.Add(boxTapGestureRecognizer);
                 boxTemplate.Dot.GestureRecognizers.Add(boxTapGestureRecognizer);
                 boxTemplate.CharLabel.GestureRecognizers.Add(boxTapGestureRecognizer);

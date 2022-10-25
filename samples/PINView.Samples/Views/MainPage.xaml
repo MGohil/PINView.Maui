@@ -35,5 +35,34 @@
             Style="{StaticResource ButtonStyle}"
             Text="All Samples"
             TextColor="Blue" />
+
+        <!--  Box sample UI  -->
+        <!--<Border
+            Padding="0"
+            BackgroundColor="Yellow"
+            HeightRequest="70"
+            HorizontalOptions="Center"
+            Stroke="Red"
+            StrokeShape="RoundRectangle 35,35,35,35"
+            StrokeThickness="5"
+            WidthRequest="70">
+            <Grid>
+                <Ellipse
+                    Fill="Red"
+                    HeightRequest="30"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="30" />
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="5"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+            </Grid>
+        </Border>-->
+
     </VerticalStackLayout>
 </ContentPage>

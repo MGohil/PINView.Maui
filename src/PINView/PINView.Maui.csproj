@@ -29,6 +29,8 @@
 	  <Folder Include="Platforms\Windows\" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Compile Remove="BoxTemplate.cs" />
+	  <Compile Update="BoxTemplate.cs">
+	    <DependentUpon>%(Filename)</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 </Project>
