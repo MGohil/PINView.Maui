@@ -14,13 +14,15 @@
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<SignAssembly>False</SignAssembly>
-		<Title>PINView</Title>
-		<Authors>MGohil</Authors>
+		<Title>PINView.MAUI</Title>
+		<Authors>mgohil</Authors>
 		<Description>PINView is .NET Maui cross platform UI control to facilitate UI for mobile PIN or OTP entry</Description>
 		<PackageProjectUrl>https://github.com/MGohil/PINView.Maui</PackageProjectUrl>
 		<PackageIcon>Package-Icon.png</PackageIcon>
 		<RepositoryUrl>https://github.com/MGohil/PINView.Maui</RepositoryUrl>
 		<PackageTags>PIN, OTP, Maui PIN, Maui OTP, PINView</PackageTags>
+		<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
 
 	<ItemGroup>
