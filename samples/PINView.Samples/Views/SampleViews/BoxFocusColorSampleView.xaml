@@ -3,8 +3,8 @@
     x:Class="PINView.Maui.Samples.Views.SampleViews.BoxFocusColorSampleView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:system="clr-namespace:System;assembly=netstandard"
-    xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui">
+    xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
+    xmlns:system="clr-namespace:System;assembly=netstandard">
     <ContentView.Content>
         <Frame BorderColor="{StaticResource ColorF}" Style="{StaticResource SampleViewsContainerFrameStyle}">
             <StackLayout>
@@ -28,7 +28,7 @@
                     </Label.FormattedText>
                 </Label>
 
-                <StackLayout Padding="{StaticResource 0,20}">
+                <StackLayout Padding="0,20">
                     <Label HorizontalTextAlignment="Center" Text="BoxFocusColor = #0000FF (Blue)" />
                     <pinView:PINView
                         x:Name="pinView1"
