@@ -12,6 +12,15 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<SignAssembly>False</SignAssembly>
+		<Title>PINView</Title>
+		<Authors>MGohil</Authors>
+		<Description>PINView is .NET Maui cross platform UI control to facilitate UI for mobile PIN or OTP entry</Description>
+		<PackageProjectUrl>https://github.com/MGohil/PINView.Maui</PackageProjectUrl>
+		<PackageIcon>Package-Icon.png</PackageIcon>
+		<RepositoryUrl>https://github.com/MGohil/PINView.Maui</RepositoryUrl>
+		<PackageTags>PIN, OTP, Maui PIN, Maui OTP, PINView</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -27,6 +36,12 @@
 	  <Folder Include="Platforms\Android\" />
 	  <Folder Include="Platforms\MacCatalyst\" />
 	  <Folder Include="Platforms\Windows\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="..\..\arts\Package-Icon.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 	<ItemGroup>
 	  <Compile Update="BoxTemplate.cs">
