@@ -9,6 +9,13 @@ This control can be used for Login using PIN, Creting New PIN, Change PIN, Enter
     <img src="https://github.com/MGohil/PINView.Maui/blob/master/arts/Preview-Graphic.png" width="800">
 </kbd>
 
+
+<br><br>
+Liking the control?
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/mgohil213)
+
+
 ## Nuget Package
 https://www.nuget.org/packages/PINView.Maui/
 
@@ -59,5 +66,3 @@ https://www.nuget.org/packages/PINView.Maui/
 | ----------| --- | --- |
 | PINEntryCompletedCommand | Command | A Bindable Command, which gets invoked on completion of the PIN entry (All charecters are entered) You can execute your code through this command |
 | PINEntryCompleted | Event | Invokes on completion of the PIN entry (when all charecters are entered). |
-
-
