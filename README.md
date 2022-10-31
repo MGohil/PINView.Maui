@@ -11,7 +11,7 @@ This control can be used for Login using PIN, Creting New PIN, Change PIN, Enter
 
 
 <br><br>
-Liking the control?
+If you are happy using this control and feeling generous, consider buying me a Coffee. :grinning: 
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/mgohil213)
 
