@@ -16,7 +16,7 @@ https://www.nuget.org/packages/PINView.Maui/
 - [X] iOS
 - [X] MacCatalyst
 - [X] Android
-- [X] WinUI
+- [X] Windows
 
 
 ## Steps
@@ -38,12 +38,16 @@ https://www.nuget.org/packages/PINView.Maui/
 | AutoDismissKeyboard | Boolean | False | Decides whether to dismiss the keyboard automatically when all charecters entered |
 | BoxBackgroundColor | Color | Transparent | Defines the BackgroundColor of each PIN Box |
 | BoxBorderColor | Color | Color Property Value | Defines the Border Color of each PIN Box |
+| BoxBorderThickness | double | 1.0 | Sets the Thickness of Border of each PinBoxes |
 | BoxFocusColor | Color | Black | Defines the Focus Indicator Border Color when PIN Box is Focused |
 | BoxFocusAnimation | Enum | None | Animates the Box when it receives the Focus. Enum values [ None, ZoomInOut, ScaleUp ]|
 | BoxShape | Enum | Circle | Defines the shape of PIN Box from Enum values [ Squere, RoundCorner, Circle ] |
 | BoxSize | Double | 50 | Defines the Width and Height of each PIN Box |
 | BoxSpacing | Double | 5 | Defines the space among each PIN Box |
 | Color | Color | Accent | Defines the Color of PIN Box (Border and Dot) |
+| DotSize | double | 20.0 | Sets the Dot size of each Dots in PinBoxes |
+| FontAttributes | FontAttributes | None | Sets the FontAttributes of the Char label in each box. Applicable when IsPassword = False |
+| FontFamily | string | System Font | Sets the FontFamily of the Char label in each box. Applicable when IsPassword = False |
 | IsPassword | Boolean | False | Defines whether to show actual input character or hide / secure via Dot |
 | PINInputType | Enum | Numeric | Defines the Input Type from Enum [ Numeric, AlphaNumeric ] |
 | PINLength | Integer | 4 | Defines the Length (No. of Characters) of the PIN |
