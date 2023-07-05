@@ -28,6 +28,10 @@
                 <sampleViews:BoxSpacingSampleView />
                 <sampleViews:AutoDismissKeyboardSampleView />
                 <sampleViews:InputPINProgramaticallySampleView />
+                <sampleViews:FontFamilySampleView />
+                <sampleViews:FontAttributeSampleView />
+                <sampleViews:DotSizeSampleView />
+                <sampleViews:FontSizeSampleView />
             </VerticalStackLayout>
         </ScrollView>
     </ContentPage.Content>

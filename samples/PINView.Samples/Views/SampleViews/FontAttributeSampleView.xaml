@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="PINView.Maui.Samples.Views.SampleViews.FontAttributeSampleView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
+    xmlns:system="clr-namespace:System;assembly=netstandard">
+    <ContentView.Content>
+        <Frame BorderColor="{StaticResource ColorB}" Style="{StaticResource SampleViewsContainerFrameStyle}">
+            <StackLayout>
+
+                <Label BackgroundColor="{StaticResource LightColorB}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="FontAttribute" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <StackLayout Padding="0,20">
+                    <Label HorizontalTextAlignment="Center" Text="FontAttribute = (None - Default)"/>
+                    <pinView:PINView
+                        BoxBackgroundColor="{DynamicResource LightColorB}"
+                        BoxShape="Circle"
+                        IsPassword="False"
+                        PINValue="1234"
+                        Style="{StaticResource PINViewStyle}"
+                        Color="{DynamicResource ColorB}" />
+
+                    <Label HorizontalTextAlignment="Center" Text="FontAttribute = (Bold)" Margin="0,15,0,0"/>
+                    <pinView:PINView
+                        BoxBackgroundColor="{DynamicResource LightColorB}"
+                        BoxShape="Circle"
+                        FontAttributes="Bold"
+                        IsPassword="False"
+                        PINLength="5"
+                        PINValue="12345"
+                        Style="{StaticResource PINViewStyle}"
+                        Color="{DynamicResource ColorB}" />
+
+                    <Label HorizontalTextAlignment="Center" Text="FontAttribute = (Italic)" Margin="0,15,0,0"/>
+                    <pinView:PINView
+                        BoxBackgroundColor="{DynamicResource LightColorB}"
+                        BoxShape="Circle"
+                        FontAttributes="Italic"
+                        IsPassword="False"
+                        PINLength="5"
+                        PINValue="12345"
+                        Style="{StaticResource PINViewStyle}"
+                        Color="{DynamicResource ColorB}" />
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>
