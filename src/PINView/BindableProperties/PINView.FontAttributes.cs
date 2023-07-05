@@ -19,13 +19,14 @@ namespace PINView.Maui
                nameof(FontAttributes),
                typeof(FontAttributes),
                typeof(PINView),
+               FontAttributes.None,
                defaultBindingMode: BindingMode.OneWay,
                propertyChanged: FontAttributesPropertyChanged);
 
         private static void FontAttributesPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var control = ((PINView)bindable);
-
+            
             control.PINBoxContainer.Children.ToList().ForEach(x =>
             {
                 var boxTemplate = (BoxTemplate)x;

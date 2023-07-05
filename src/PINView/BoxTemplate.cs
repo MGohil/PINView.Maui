@@ -61,8 +61,8 @@ internal class BoxTemplate : ContentView
             Margin = DeviceInfo.Platform == DevicePlatform.WinUI ? new Thickness(0, 0, 0, 2) : new Thickness(0),
             FontAttributes = FontAttributes.Bold,
             TextColor = Constants.DefaultColor,
-            HorizontalOptions = LayoutOptions.Center,
-            VerticalOptions = LayoutOptions.Center,
+            //HorizontalOptions = LayoutOptions.Center,
+            //VerticalOptions = LayoutOptions.Center,
             VerticalTextAlignment = TextAlignment.Center,
             HorizontalTextAlignment = TextAlignment.Center,
         };
