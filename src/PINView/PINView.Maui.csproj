@@ -12,6 +12,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<PackageId>PINView.MAUI</PackageId>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<SignAssembly>False</SignAssembly>
 		<Title>PINView.MAUI</Title>
@@ -23,6 +24,7 @@
 		<PackageTags>PIN, OTP, Maui PIN, Maui OTP, PINView</PackageTags>
 		<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Version>1.0.1</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
