@@ -53,6 +53,7 @@ https://www.nuget.org/packages/PINView.Maui/
 | BoxSpacing | Double | 5 | Defines the space among each PIN Box |
 | Color | Color | Accent | Defines the Color of PIN Box (Border and Dot) |
 | DotSize | double | 20.0 | Sets the Dot size of each Dots in PinBoxes |
+| FontSize | double | 20.0 | Sets the Font size of each char Label in PinBoxes |
 | FontAttributes | FontAttributes | None | Sets the FontAttributes of the Char label in each box. Applicable when IsPassword = False |
 | FontFamily | string | System Font | Sets the FontFamily of the Char label in each box. Applicable when IsPassword = False |
 | IsPassword | Boolean | False | Defines whether to show actual input character or hide / secure via Dot |
