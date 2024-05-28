@@ -27,7 +27,7 @@
                     </Label.FormattedText>
                 </Label>
 
-                <StackLayout Padding="{StaticResource 0,20}">
+                <StackLayout Padding="0,20">
 
                     <Label HorizontalTextAlignment="Center" Text="BoxFocusAnimation = ZoomInOut" />
                     <pinView:PINView
