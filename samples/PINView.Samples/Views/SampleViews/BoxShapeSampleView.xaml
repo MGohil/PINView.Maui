@@ -13,7 +13,7 @@
                         <FormattedString>
                             <Span Text="BoxShape" />
                             <Span Text="{x:Static system:Environment.NewLine}" />
-                            <Span FontSize="Small" Text="Type : Enum [ Squere, RoundCorner, Circle ]" />
+                            <Span FontSize="Small" Text="Type : Enum [ Square, RoundCorner, Circle ]" />
                             <Span Text="{x:Static system:Environment.NewLine}" />
                             <Span FontSize="Small" Text="Default : Circle" />
                         </FormattedString>
@@ -21,8 +21,8 @@
                 </Label>
 
                 <VerticalStackLayout Padding="0,20">
-                    <Label HorizontalTextAlignment="Center" Text="BoxShape = Squere" />
-                    <pinView:PINView BoxShape="Squere" Style="{StaticResource PINViewStyle}" />
+                    <Label HorizontalTextAlignment="Center" Text="BoxShape = Square" />
+                    <pinView:PINView BoxShape="Square" Style="{StaticResource PINViewStyle}" />
                     <Label
                         Margin="0,20,0,0"
                         HorizontalTextAlignment="Center"

@@ -139,7 +139,7 @@ internal class BoxTemplate : ContentView
                 CornerRadius = new CornerRadius(BoxBorder.HeightRequest / 2),
             };
         }
-        else if (shapeType == BoxShapeType.Squere)
+        else if (shapeType == BoxShapeType.Square)
         {
             BoxBorder.StrokeShape = new RoundRectangle
             {

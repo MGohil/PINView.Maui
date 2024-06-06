@@ -26,7 +26,7 @@
                     <pinView:PINView
                         BoxBackgroundColor="{StaticResource LightColorB}"
                         BoxBorderColor="Transparent"
-                        BoxShape="Squere"
+                        BoxShape="Square"
                         HorizontalOptions="Center"
                         IsPassword="True"
                         PINLength="5"
@@ -41,7 +41,7 @@
                     <pinView:PINView
                         BoxBackgroundColor="Transparent"
                         BoxBorderColor="Green"
-                        BoxShape="Squere"
+                        BoxShape="Square"
                         HorizontalOptions="Center"
                         IsPassword="True"
                         PINLength="5"

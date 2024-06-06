@@ -7,7 +7,7 @@ namespace PINView.Maui
         /// <summary>
         /// Gets or Sets the Shape of the PIN Box from BoxShapeType enum:
         ///
-        /// Circle, RoundCorner Squere
+        /// Circle, RoundCorner Square
         /// </summary>
         public BoxShapeType BoxShape
         {
