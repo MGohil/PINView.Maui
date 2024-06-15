@@ -3,7 +3,7 @@
     public enum BoxShapeType
     {
         Circle,
-        Squere,
+        Square,
         RoundCorner,
     }
 }

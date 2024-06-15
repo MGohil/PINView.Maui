@@ -42,13 +42,13 @@ https://www.nuget.org/packages/PINView.Maui/
 ## Properties Definitions
 | Property | Type | Default | Description |
 | ----------| --- | --- | --- |
-| AutoDismissKeyboard | Boolean | False | Decides whether to dismiss the keyboard automatically when all charecters entered |
+| AutoDismissKeyboard | Boolean | False | Decides whether to dismiss the keyboard automatically when all characters entered |
 | BoxBackgroundColor | Color | Transparent | Defines the BackgroundColor of each PIN Box |
 | BoxBorderColor | Color | Color Property Value | Defines the Border Color of each PIN Box |
 | BoxBorderThickness | double | 1.0 | Sets the Thickness of Border of each PinBoxes |
 | BoxFocusColor | Color | Black | Defines the Focus Indicator Border Color when PIN Box is Focused |
 | BoxFocusAnimation | Enum | None | Animates the Box when it receives the Focus. Enum values [ None, ZoomInOut, ScaleUp ]|
-| BoxShape | Enum | Circle | Defines the shape of PIN Box from Enum values [ Squere, RoundCorner, Circle ] |
+| BoxShape | Enum | Circle | Defines the shape of PIN Box from Enum values [ Square, RoundCorner, Circle ] |
 | BoxSize | Double | 50 | Defines the Width and Height of each PIN Box |
 | BoxSpacing | Double | 5 | Defines the space among each PIN Box |
 | Color | Color | Accent | Defines the Color of PIN Box (Border and Dot) |
@@ -65,5 +65,5 @@ https://www.nuget.org/packages/PINView.Maui/
 ## Commands / Events Definitions
 | Command / Event | Type | Description |
 | ----------| --- | --- |
-| PINEntryCompletedCommand | Command | A Bindable Command, which gets invoked on completion of the PIN entry (All charecters are entered) You can execute your code through this command |
-| PINEntryCompleted | Event | Invokes on completion of the PIN entry (when all charecters are entered). |
+| PINEntryCompletedCommand | Command | A Bindable Command, which gets invoked on completion of the PIN entry (All characters are entered) You can execute your code through this command |
+| PINEntryCompleted | Event | Invokes on completion of the PIN entry (when all characters are entered). |
