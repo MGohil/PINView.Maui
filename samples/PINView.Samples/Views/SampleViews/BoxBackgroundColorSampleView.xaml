@@ -6,7 +6,7 @@
     xmlns:system="clr-namespace:System;assembly=netstandard"
     xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui">
     <ContentView.Content>
-        <Frame BorderColor="{StaticResource ColorA}" Style="{StaticResource SampleViewsContainerFrameStyle}">
+        <Border Stroke="{StaticResource ColorA}" Style="{StaticResource SampleViewsContainerBorderStyle}">
 
             <StackLayout Spacing="0">
 
@@ -43,12 +43,11 @@
                         Style="{StaticResource PINViewStyle}"
                         Color="#33691E" />
 
-                    <Frame
+                    <Border
                         Margin="20"
                         Padding="0,20"
                         BackgroundColor="Black"
-                        CornerRadius="10"
-                        HasShadow="False">
+                        StrokeShape="RoundRectangle 10">
                         <StackLayout>
                             <Label
                                 HorizontalTextAlignment="Center"
@@ -67,10 +66,10 @@
                                 Style="{StaticResource PINViewStyle}"
                                 Color="#989898" />
                         </StackLayout>
-                    </Frame>
+                    </Border>
                 </StackLayout>
 
             </StackLayout>
-        </Frame>
+        </Border>
     </ContentView.Content>
 </ContentView>

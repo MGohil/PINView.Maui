@@ -4,7 +4,6 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
-    xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
     xmlns:sampleViews="clr-namespace:PINView.Maui.Samples.Views.SampleViews"
     xmlns:vm="clr-namespace:PINView.Maui.Samples.ViewModels"
     Title="{Binding Title}"
@@ -14,7 +13,7 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView>
-            <VerticalStackLayout Spacing="0">
+            <VerticalStackLayout Spacing="0" Margin="0,0,0,15">
                 <sampleViews:BoxShapeSampleView />
                 <sampleViews:IsPasswordSampleView />
                 <sampleViews:PINLengthSampleView />
