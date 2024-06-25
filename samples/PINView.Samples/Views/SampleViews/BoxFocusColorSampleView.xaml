@@ -6,7 +6,7 @@
     xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
     xmlns:system="clr-namespace:System;assembly=netstandard">
     <ContentView.Content>
-        <Frame BorderColor="{StaticResource ColorF}" Style="{StaticResource SampleViewsContainerFrameStyle}">
+        <Border Stroke="{StaticResource ColorF}" Style="{StaticResource SampleViewsContainerBorderStyle}">
             <StackLayout>
 
                 <Label BackgroundColor="{StaticResource LightColorF}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
@@ -49,6 +49,6 @@
                 </StackLayout>
 
             </StackLayout>
-        </Frame>
+        </Border>
     </ContentView.Content>
 </ContentView>
