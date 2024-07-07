@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net8.0;net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
@@ -24,34 +24,33 @@
 		<PackageTags>PIN, OTP, Maui PIN, Maui OTP, PINView</PackageTags>
 		<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<Version>1.0.1</Version>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Version>1.0.2</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="BoxView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
+		<MauiXaml Update="BoxView.xaml">
+			<SubType></SubType>
+		</MauiXaml>
 	</ItemGroup>
 	<ItemGroup>
-	  <None Remove="Converters\" />
-	  <None Remove="Platforms\Android\Handlers\" />
+		<None Remove="Converters\" />
+		<None Remove="Platforms\Android\Handlers\" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Converters\" />
-	  <Folder Include="Platforms\Android\" />
-	  <Folder Include="Platforms\MacCatalyst\" />
-	  <Folder Include="Platforms\Windows\" />
-	  <Folder Include="Platforms\Android\Handlers\" />
+		<Folder Include="Converters\" />
+		<Folder Include="Platforms\Android\" />
+		<Folder Include="Platforms\MacCatalyst\" />
+		<Folder Include="Platforms\Windows\" />
+		<Folder Include="Platforms\Android\Handlers\" />
 	</ItemGroup>
 	<ItemGroup>
-	  <None Include="..\..\arts\Package-Icon.png">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
+		<None Include="..\..\arts\Package-Icon.png" Pack="true" PackagePath="\"/>
+		<None Include="..\..\README.md" Pack="true" PackagePath="\"/>
 	</ItemGroup>
 	<ItemGroup>
-	  <Compile Update="BoxTemplate.cs">
-	    <DependentUpon>%(Filename)</DependentUpon>
-	  </Compile>
+		<Compile Update="BoxTemplate.cs">
+			<DependentUpon>%(Filename)</DependentUpon>
+		</Compile>
 	</ItemGroup>
 </Project>
