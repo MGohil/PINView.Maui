@@ -8,22 +8,22 @@ namespace PINView.Maui
         /// Gets or Sets the Corner radius of each PIN Box. Only applicable when BoxShape is set to RoundCorner
         /// For Square and Circle shapes, this property value will be ignored
         /// </summary>
-        public double CornerRadius
+        public double BoxCornerRadius
         {
-            get => (double)GetValue(CornerRadiusProperty);
-            set => SetValue(CornerRadiusProperty, value);
+            get => (double)GetValue(BoxCornerRadiusProperty);
+            set => SetValue(BoxCornerRadiusProperty, value);
         }
 
-        public static readonly BindableProperty CornerRadiusProperty =
+        public static readonly BindableProperty BoxCornerRadiusProperty =
           BindableProperty.Create(
-              nameof(CornerRadius),
+              nameof(BoxCornerRadius),
               typeof(double),
               typeof(PINView),
               10.0,
               defaultBindingMode: BindingMode.OneWay,
-              propertyChanged: CornerRadiusPropertyChanged);
+              propertyChanged: BoxCornerRadiusPropertyChanged);
 
-        private static void CornerRadiusPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        private static void BoxCornerRadiusPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             if ((double)newValue < 0)
             {
