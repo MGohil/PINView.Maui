@@ -130,7 +130,7 @@ internal class BoxTemplate : ContentView
     /// Applies the Corner Radius to the PIN Box based on the ShapeType
     /// </summary>
     /// <param name="shapeType"></param>
-    public void SetRadius(BoxShapeType shapeType)
+    public void SetRadius(BoxShapeType shapeType, double radius = 10)
     {
         if (shapeType == BoxShapeType.Circle)
         {
@@ -150,7 +150,7 @@ internal class BoxTemplate : ContentView
         {
             BoxBorder.StrokeShape = new RoundRectangle
             {
-                CornerRadius = new CornerRadius(10),
+                CornerRadius = new CornerRadius(radius),
             };
         }
     }
