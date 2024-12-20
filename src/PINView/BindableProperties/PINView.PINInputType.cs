@@ -27,7 +27,7 @@ namespace PINView.Maui
         private static void PINInputTypePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var control = ((PINView)bindable);
-            control.SetInputType((InputKeyboardType)newValue);
+            control?.SetInputType((InputKeyboardType)newValue);
         }
 
         /// <summary>
@@ -36,15 +36,15 @@ namespace PINView.Maui
         /// <param name="inputKeyboardType"></param>
         public void SetInputType(InputKeyboardType inputKeyboardType)
         {
-            if (inputKeyboardType == InputKeyboardType.Numeric)
+            hiddenTextEntry.Keyboard = inputKeyboardType switch
             {
-                hiddenTextEntry.Keyboard = Keyboard.Numeric;
-            }
-            else if (inputKeyboardType == InputKeyboardType.AlphaNumeric)
-            {
-                // Keyboard.Create(0); : To remove the Hints on top of Keyboard, while typing
-                hiddenTextEntry.Keyboard = Keyboard.Create(0);
-            }
+                InputKeyboardType.Numeric => Keyboard.Numeric,
+                // Keyboard.Create(KeyboardFlags.None): To remove the Hints on top of Keyboard, while typing
+                InputKeyboardType.AlphaNumeric => Keyboard.Create(KeyboardFlags.None),
+                // Keyboard.Create(KeyboardFlags.None | KeyboardFlags.CapitalizeCharacter): To make the Keyboard uppercase by default
+                InputKeyboardType.AlphaNumericUppercase => Keyboard.Create(KeyboardFlags.None | KeyboardFlags.CapitalizeCharacter),
+                _ => hiddenTextEntry.Keyboard
+            };
         }
     }
 }
