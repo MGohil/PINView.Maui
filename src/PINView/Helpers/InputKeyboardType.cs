@@ -3,6 +3,7 @@
     public enum InputKeyboardType
     {
         Numeric,
-        AlphaNumeric
+        AlphaNumeric,
+        AlphaNumericUppercase
     }
 }

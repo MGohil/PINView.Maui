@@ -57,7 +57,7 @@ https://www.nuget.org/packages/PINView.Maui/
 | FontAttributes | FontAttributes | None | Sets the FontAttributes of the Char label in each box. Applicable when IsPassword = False |
 | FontFamily | string | System Font | Sets the FontFamily of the Char label in each box. Applicable when IsPassword = False |
 | IsPassword | Boolean | False | Defines whether to show actual input character or hide / secure via Dot |
-| PINInputType | Enum | Numeric | Defines the Input Type from Enum [ Numeric, AlphaNumeric ] |
+| PINInputType | Enum | Numeric | Defines the Input Type from Enum [ Numeric, AlphaNumeric, AlphaNumericUppercase ] |
 | PINLength | Integer | 4 | Defines the Length (No. of Characters) of the PIN |
 | PINValue | String | Empty | Bind this to string Property in your ViewModel, to get value of the Entered PIN |
 

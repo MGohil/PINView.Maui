@@ -43,9 +43,24 @@
                         BoxBackgroundColor="{StaticResource LightColorC}"
                         IsPassword="False"
                         PINInputType="AlphaNumeric"
+                        PINValue="abcd"
+                        Style="{StaticResource PINViewStyle}"
+                        Color="{StaticResource ColorC}" />
+
+                    <Label
+                        Margin="0,20,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="PINInputType = AlphaNumericUppercase" />
+
+                    <pinView:PINView
+                        x:Name="pinView3"
+                        BoxBackgroundColor="{StaticResource LightColorC}"
+                        IsPassword="False"
+                        PINInputType="AlphaNumericUppercase"
                         PINValue="ABCD"
                         Style="{StaticResource PINViewStyle}"
                         Color="{StaticResource ColorC}" />
+
                 </StackLayout>
 
             </StackLayout>

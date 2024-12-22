@@ -1,5 +1,4 @@
 ﻿using PINView.Maui.Helpers;
-using System.ComponentModel;
 using System.Diagnostics;
 
 namespace PINView.Maui
@@ -10,7 +9,7 @@ namespace PINView.Maui
         #region Fields
 
         /// <summary>
-        /// A TapGuesture Recognizer to invoke when user tap on any PIN box. This will help bring up the soft keyboard
+        /// A TapGesture Recognizer to invoke when user tap on any PIN box. This will help bring up the soft keyboard
         /// </summary>
         private readonly TapGestureRecognizer boxTapGestureRecognizer;
 
@@ -51,10 +50,10 @@ namespace PINView.Maui
 
         private void HiddenTextEntry_Focused(object sender, FocusEventArgs e)
         {
-            var length = PINValue == null ? 0 : PINValue.Length;
+            var length = PINValue?.Length ?? 0;
 
             // When textbox is focused, Android brings cursor to the start of value, instead of end To fix this issue,
-            // added this programatic cursor movement to the last when focused
+            // added this programmatic cursor movement to the last when focused
             hiddenTextEntry.CursorPosition = length;
 
             var pinBoxArray = PINBoxContainer.Children.Select(x => x as BoxTemplate).ToArray();
@@ -119,7 +118,7 @@ namespace PINView.Maui
                     if (PINValue.Length >= PINLength)
                     {
                         boxTemplate.SetValueWithAnimation(pinCharsArray[Constants.DefaultPINLength + i - 1]);
-                    }                    
+                    }
                 }
             }
             else if (count > PINLength)
@@ -149,7 +148,7 @@ namespace PINView.Maui
 
             if (DeviceInfo.Platform == DevicePlatform.Android)
             {
-                // Added TapGuesture to all components of the Box so that if we tap anywhere
+                // Added TapGesture to all components of the Box so that if we tap anywhere
                 // It still gets the focus. In Android things are not working as expected otherwise.
                 boxTemplate.BoxBorder.GestureRecognizers.Add(boxTapGestureRecognizer);
                 boxTemplate.ValueContainer.GestureRecognizers.Add(boxTapGestureRecognizer);
@@ -157,7 +156,7 @@ namespace PINView.Maui
                 boxTemplate.CharLabel.GestureRecognizers.Add(boxTapGestureRecognizer);
             }
             else
-            { 
+            {
                 boxTemplate.GestureRecognizers.Add(boxTapGestureRecognizer);
             }
 
@@ -181,7 +180,7 @@ namespace PINView.Maui
         #region Events
 
         /// <summary>
-        /// Invokes when user type the PIN, Assignes value to PINValue property or Text changes in the hidden textbox
+        /// Invokes when user type the PIN, Assigns value to PINValue property or Text changes in the hidden textbox
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -196,21 +195,23 @@ namespace PINView.Maui
             // last entry / or animation.
             await Task.Delay(200);
 
-            if (e.NewTextValue.Length >= PINLength)
+            if (e.NewTextValue.Length < PINLength)
             {
-                // Dismiss the keyboard, once entry is completed up to the defined length and if AutoDismissKeyboard
-                // property is true
-                if (AutoDismissKeyboard == true)
-                {
-                    (sender as Entry).Unfocus();
-                    Debug.WriteLine($"{nameof(PINView)}: PIN Entry UnFocused");
-                }
-
-                Debug.WriteLine($"{nameof(PINView)}: PIN Entry Completed");
-
-                PINEntryCompleted?.Invoke(this, new PINCompletedEventArgs(PINValue));
-                PINEntryCompletedCommand?.Execute(PINValue);
+                return;
             }
+
+            // Dismiss the keyboard, once entry is completed up to the defined length and if AutoDismissKeyboard
+            // property is true
+            if (AutoDismissKeyboard == true)
+            {
+                (sender as HiddenPinEntry)?.Unfocus();
+                Debug.WriteLine($"{nameof(PINView)}: PIN Entry UnFocused");
+            }
+
+            Debug.WriteLine($"{nameof(PINView)}: PIN Entry Completed");
+
+            PINEntryCompleted?.Invoke(this, new PINCompletedEventArgs(PINValue));
+            PINEntryCompletedCommand?.Execute(PINValue);
         }
 
         #endregion Events
