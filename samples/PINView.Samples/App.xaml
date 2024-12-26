@@ -44,6 +44,7 @@
             <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryLightColor}" />
             <Setter Property="BorderWidth" Value="1" />
             <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="FontSize" Value="16" />
         </Style>
 
         <Style x:Key="PINViewStyle" TargetType="pinView:PINView">

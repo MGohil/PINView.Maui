@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="PINView.Maui.Samples.Views.SampleViews.AutomationIdSampleView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
+    xmlns:system="clr-namespace:System;assembly=netstandard">
+    <ContentView.Content>
+        <Border Stroke="{StaticResource ColorB}" Style="{StaticResource SampleViewsContainerBorderStyle}">
+            <VerticalStackLayout Spacing="0">
+                <Label BackgroundColor="{StaticResource LightColorB}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="AutomationId" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="This control uses Hidden Entry behind the scene to hold PIN input value. To work with Automation, you have to set AutomationId of this PINView control, and it will internally set the AutomationId of this hidden Entry." />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+
+                            <Span FontSize="Small" Text="If you set AutomationId of PINView control as 'ConfirmPIN' then AutomationId of hidden Entry will be 'ConfirmPIN_PINView_Entry'." />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+
+                            <Span FontSize="Small" Text="You can get the hidden Entry's AutomationId using HiddenEntryAutomationId property." />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <VerticalStackLayout Padding="0,20">
+                    <Label
+                        x:Name="pinView1Title"
+                        Margin="10,0"
+                        HorizontalTextAlignment="Center" />
+                    <pinView:PINView
+                        x:Name="pinView1"
+                        Margin="0,15"
+                        AutomationId="PINView1"
+                        BoxBackgroundColor="{StaticResource LightColorB}"
+                        Style="{StaticResource PINViewStyle}"
+                        Color="{StaticResource ColorB}" />
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </Border>
+    </ContentView.Content>
+</ContentView>

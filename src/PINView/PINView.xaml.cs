@@ -19,6 +19,9 @@ namespace PINView.Maui
         /// </summary>
         public event EventHandler<PINCompletedEventArgs> PINEntryCompleted;
 
+        public string HiddenEntryAutomationId => hiddenTextEntry.AutomationId;
+        
+
         #endregion Fields
 
         #region Constructor and Initializations
@@ -98,6 +101,7 @@ namespace PINView.Maui
         public void CreateControl()
         {
             hiddenTextEntry.MaxLength = PINLength;
+
             SetInputType(PINInputType);
 
             var count = PINBoxContainer.Children.Count;

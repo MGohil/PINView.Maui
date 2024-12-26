@@ -5,39 +5,163 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
     xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
+    xmlns:sampleViews="clr-namespace:PINView.Maui.Samples.Views.SampleViews"
     xmlns:vm="clr-namespace:PINView.Maui.Samples.ViewModels"
     Title="{Binding Title}"
     ios:Page.UseSafeArea="true">
     <ContentPage.BindingContext>
         <vm:MainPageViewModel />
     </ContentPage.BindingContext>
-    <VerticalStackLayout Padding="30" Spacing="30">
+    <ContentPage.Resources>
+        <Style
+            x:Name="SampleButtonStyle"
+            BasedOn="{StaticResource ButtonStyle}"
+            TargetType="Button">
+            <Setter Property="BorderColor" Value="Black" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="BackgroundColor" Value="#FFFFFF" />
+        </Style>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
 
-        <Button
-            Command="{Binding GoToPINLoginPageCommand}"
-            Style="{StaticResource ButtonStyle}"
-            Text="PIN Login" />
+            <Button
+                Command="{Binding GoToPINLoginPageCommand}"
+                Style="{StaticResource ButtonStyle}"
+                Text="PIN Login" />
 
-        <Button
-            Command="{Binding GoToCreatePINPageCommand}"
-            Style="{StaticResource ButtonStyle}"
-            Text="Create PIN" />
+            <Button
+                Command="{Binding GoToCreatePINPageCommand}"
+                Style="{StaticResource ButtonStyle}"
+                Text="Create PIN" />
 
-        <Button
-            Command="{Binding GoToChangePINPageCommand}"
-            Style="{StaticResource ButtonStyle}"
-            Text="Change PIN" />
+            <Button
+                Command="{Binding GoToChangePINPageCommand}"
+                Style="{StaticResource ButtonStyle}"
+                Text="Change PIN" />
 
-        <Button
+            <!--<Button
             BackgroundColor="#E5E5FF"
-            BorderColor="Blue"
+            BorderColor="Purple"
             Command="{Binding GoToPINSamplesPageCommand}"
-            Style="{StaticResource ButtonStyle}"
+            Style="{StaticResource SampleButtonStyle}"
             Text="All Samples"
-            TextColor="Blue" />
+            TextColor="Purple" />-->
 
-        <!--  Box sample UI  -->
-        <!--<Border
+
+            <VerticalStackLayout Margin="0,20,0,15" Spacing="10">
+
+                <Button
+                    Command="{Binding GoToPINSampleContainerPageCommand}"
+                    CommandParameter="{sampleViews:AutoDismissKeyboardSampleView}"
+                    Style="{StaticResource SampleButtonStyle}"
+                    Text="AutoDismissKeyboard" />
+
+                <Button
+                    Command="{Binding GoToPINSampleContainerPageCommand}"
+                    CommandParameter="{sampleViews:BoxBackgroundColorSampleView}"
+                    Style="{StaticResource SampleButtonStyle}"
+                    Text="BoxBackgroundColor" />
+
+                <Button
+                    Command="{Binding GoToPINSampleContainerPageCommand}"
+                    CommandParameter="{sampleViews:BoxBorderColorSampleView}"
+                    Style="{StaticResource SampleButtonStyle}"
+                    Text="BoxBorderColor" />
+
+                <Button
+                    Command="{Binding GoToPINSampleContainerPageCommand}"
+                    CommandParameter="{sampleViews:BoxFocusAnimationSampleView}"
+                    Style="{StaticResource SampleButtonStyle}"
+                    Text="BoxFocusAnimation" />
+
+                <Button
+                    Command="{Binding GoToPINSampleContainerPageCommand}"
+                    CommandParameter="{sampleViews:BoxFocusColorSampleView}"
+                    Style="{StaticResource SampleButtonStyle}"
+                    Text="BoxFocusColor" />
+
+                <Button
+                    Command="{Binding GoToPINSampleContainerPageCommand}"
+                    CommandParameter="{sampleViews:BoxShapeSampleView}"
+                    Style="{StaticResource SampleButtonStyle}"
+                    Text="BoxShape" />
+
+                <Button
+                    Command="{Binding GoToPINSampleContainerPageCommand}"
+                    CommandParameter="{sampleViews:BoxSizeSampleView}"
+                    Style="{StaticResource SampleButtonStyle}"
+                    Text="BoxSize" />
+
+                <Button
+                    Command="{Binding GoToPINSampleContainerPageCommand}"
+                    CommandParameter="{sampleViews:BoxSpacingSampleView}"
+                    Style="{StaticResource SampleButtonStyle}"
+                    Text="BoxSpacing" />
+
+                <Button
+                    Command="{Binding GoToPINSampleContainerPageCommand}"
+                    CommandParameter="{sampleViews:ColorSampleView}"
+                    Style="{StaticResource SampleButtonStyle}"
+                    Text="Color" />
+
+                <Button
+                    Command="{Binding GoToPINSampleContainerPageCommand}"
+                    CommandParameter="{sampleViews:DotSizeSampleView}"
+                    Style="{StaticResource SampleButtonStyle}"
+                    Text="DotSize" />
+
+                <Button
+                    Command="{Binding GoToPINSampleContainerPageCommand}"
+                    CommandParameter="{sampleViews:FontAttributeSampleView}"
+                    Style="{StaticResource SampleButtonStyle}"
+                    Text="FontAttribute" />
+
+                <Button
+                    Command="{Binding GoToPINSampleContainerPageCommand}"
+                    CommandParameter="{sampleViews:FontFamilySampleView}"
+                    Style="{StaticResource SampleButtonStyle}"
+                    Text="FontFamily" />
+
+                <Button
+                    Command="{Binding GoToPINSampleContainerPageCommand}"
+                    CommandParameter="{sampleViews:FontSizeSampleView}"
+                    Style="{StaticResource SampleButtonStyle}"
+                    Text="FontSize" />
+
+                <Button
+                    Command="{Binding GoToPINSampleContainerPageCommand}"
+                    CommandParameter="{sampleViews:InputPINProgramaticallySampleView}"
+                    Style="{StaticResource SampleButtonStyle}"
+                    Text="Input PIN Programatically" />
+
+                <Button
+                    Command="{Binding GoToPINSampleContainerPageCommand}"
+                    CommandParameter="{sampleViews:IsPasswordSampleView}"
+                    Style="{StaticResource SampleButtonStyle}"
+                    Text="IsPassword" />
+
+                <Button
+                    Command="{Binding GoToPINSampleContainerPageCommand}"
+                    CommandParameter="{sampleViews:PINInputTypeSampleView}"
+                    Style="{StaticResource SampleButtonStyle}"
+                    Text="PINInputType" />
+                <Button
+                    Command="{Binding GoToPINSampleContainerPageCommand}"
+                    CommandParameter="{sampleViews:PINLengthSampleView}"
+                    Style="{StaticResource SampleButtonStyle}"
+                    Text="PINLength" />
+
+                <Button
+                    Command="{Binding GoToPINSampleContainerPageCommand}"
+                    CommandParameter="{sampleViews:AutomationIdSampleView}"
+                    Style="{StaticResource SampleButtonStyle}"
+                    Text="AutomationId" />
+
+            </VerticalStackLayout>
+
+            <!--  Box sample UI  -->
+            <!--<Border
             Padding="0"
             BackgroundColor="Yellow"
             HeightRequest="70"
@@ -64,5 +188,6 @@
             </Grid>
         </Border>-->
 
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
