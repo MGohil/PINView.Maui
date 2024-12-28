@@ -6,10 +6,10 @@
     xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
     xmlns:system="clr-namespace:System;assembly=netstandard">
     <ContentView.Content>
-        <Border Stroke="{StaticResource ColorC}" Style="{StaticResource SampleViewsContainerBorderStyle}">
+        <Border Style="{StaticResource SampleViewsContainerBorderStyle}">
             <StackLayout>
 
-                <Label BackgroundColor="{StaticResource LightColorC}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="DotSize" />
@@ -23,37 +23,36 @@
 
                 <StackLayout Padding="0,20">
 
-                    <Label HorizontalTextAlignment="Center" Text="DotSize = 15"/>
+                    <Label HorizontalTextAlignment="Center" Text="DotSize = 15" />
                     <pinView:PINView
-                        BoxBackgroundColor="{DynamicResource LightColorC}"
                         BoxShape="Circle"
-                        IsPassword="True"
-                        PINLength="5"
-                        PINValue="12345"
                         DotSize="15"
-                        Style="{StaticResource PINViewStyle}"
-                        Color="{DynamicResource ColorC}" />
-
-                    <Label HorizontalTextAlignment="Center" Text="DotSize = 20  (Default)" Margin="0,15,0,0"/>
-                    <pinView:PINView
-                        BoxBackgroundColor="{DynamicResource LightColorC}"
-                        BoxShape="Circle"
                         IsPassword="True"
                         PINLength="5"
                         PINValue="12345"
-                        Style="{StaticResource PINViewStyle}"
-                        Color="{DynamicResource ColorC}" />
+                        Style="{StaticResource PINViewStyle}" />
 
-                    <Label HorizontalTextAlignment="Center" Text="DotSize = 25"/>
+                    <Label
+                        Margin="0,15,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="DotSize = 20  (Default)" />
                     <pinView:PINView
-                        BoxBackgroundColor="{DynamicResource LightColorC}"
                         BoxShape="Circle"
                         IsPassword="True"
-                        PINLength="5"
-                        PINValue="12345"
+                        PINValue="1234"
+                        Style="{StaticResource PINViewStyle}" />
+
+                    <Label
+                        Margin="0,15,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="DotSize = 25" />
+                    <pinView:PINView
+                        BoxShape="Circle"
                         DotSize="25"
-                        Style="{StaticResource PINViewStyle}"
-                        Color="{DynamicResource ColorC}" />
+                        IsPassword="True"
+                        PINLength="5"
+                        PINValue="12345"
+                        Style="{StaticResource PINViewStyle}" />
                 </StackLayout>
             </StackLayout>
         </Border>

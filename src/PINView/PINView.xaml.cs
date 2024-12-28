@@ -19,6 +19,9 @@ namespace PINView.Maui
         /// </summary>
         public event EventHandler<PINCompletedEventArgs> PINEntryCompleted;
 
+        public string HiddenEntryAutomationId => hiddenTextEntry.AutomationId;
+
+
         #endregion Fields
 
         #region Constructor and Initializations
@@ -98,6 +101,7 @@ namespace PINView.Maui
         public void CreateControl()
         {
             hiddenTextEntry.MaxLength = PINLength;
+
             SetInputType(PINInputType);
 
             var count = PINBoxContainer.Children.Count;
@@ -140,11 +144,26 @@ namespace PINView.Maui
             BoxTemplate boxTemplate = new BoxTemplate();
             boxTemplate.HeightRequest = BoxSize;
             boxTemplate.WidthRequest = BoxSize;
+
+            boxTemplate.BoxBorder.HeightRequest = BoxSize;
+            boxTemplate.BoxBorder.WidthRequest = BoxSize;
+
+            // If FontSize is default, but BoxSize is changed, then BoxSize will auto adjust the font size.
+            if (FontSize == Constants.DefaultFontSize && BoxSize != Constants.DefaultBoxSize)
+            {
+                boxTemplate.CharLabel.FontSize = ((double)BoxSize / 2);
+            }
+            else 
+            {
+                boxTemplate.CharLabel.FontSize = FontSize;
+            }
+
+            boxTemplate.Dot.HeightRequest = DotSize;
+            boxTemplate.Dot.WidthRequest = DotSize;
+
             boxTemplate.BoxBorder.BackgroundColor = BoxBackgroundColor;
-            boxTemplate.CharLabel.FontSize = BoxSize / 2;
             boxTemplate.CharLabel.FontFamily = FontFamily;
             boxTemplate.CharLabel.FontAttributes = FontAttributes;
-            boxTemplate.CharLabel.FontSize = FontSize;
 
             if (DeviceInfo.Platform == DevicePlatform.Android)
             {
@@ -162,6 +181,8 @@ namespace PINView.Maui
 
             boxTemplate.BoxFocusColor = BoxFocusColor;
             boxTemplate.FocusAnimationType = BoxFocusAnimation;
+            boxTemplate.BoxBorder.StrokeThickness = BoxStrokeThickness;
+            boxTemplate.BoxBorder.StrokeDashArray = BoxStrokeDashArray;
             boxTemplate.SecureMode(IsPassword);
             boxTemplate.SetColor(Color, BoxBorderColor);
             boxTemplate.SetRadius(BoxShape);

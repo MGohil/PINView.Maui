@@ -13,7 +13,7 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView>
-            <VerticalStackLayout Spacing="0" Margin="0,0,0,15">
+            <VerticalStackLayout Margin="0,0,0,15" Spacing="0">
                 <sampleViews:BoxShapeSampleView />
                 <sampleViews:IsPasswordSampleView />
                 <sampleViews:PINLengthSampleView />

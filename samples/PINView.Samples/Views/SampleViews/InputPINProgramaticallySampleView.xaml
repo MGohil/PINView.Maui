@@ -6,9 +6,9 @@
     xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
     xmlns:system="clr-namespace:System;assembly=netstandard">
     <ContentView.Content>
-        <Border Stroke="{StaticResource ColorC}" Style="{StaticResource SampleViewsContainerBorderStyle}">
+        <Border Style="{StaticResource SampleViewsContainerBorderStyle}">
             <VerticalStackLayout Spacing="0">
-                <Label BackgroundColor="{StaticResource LightColorC}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="Programatically Input PIN" />
@@ -45,12 +45,10 @@
                             HorizontalTextAlignment="Center"
                             Text="PINValue = 12345" />-->
                         <pinView:PINView
-                            BoxBackgroundColor="{StaticResource LightColorC}"
                             IsPassword="False"
                             PINLength="5"
                             PINValue="12345"
-                            Style="{StaticResource PINViewStyle}"
-                            Color="{StaticResource ColorC}" />
+                            Style="{StaticResource PINViewStyle}" />
 
                         <!--<Label
                             Margin="0,15,0,0"
@@ -80,11 +78,9 @@
 
                         <pinView:PINView
                             x:Name="pinView2"
-                            BoxBackgroundColor="{StaticResource LightColorC}"
                             IsPassword="False"
                             PINLength="5"
-                            Style="{StaticResource PINViewStyle}"
-                            Color="{StaticResource ColorC}" />
+                            Style="{StaticResource PINViewStyle}" />
 
                         <!--<pinView:PINView
                             x:Name="pinView3"
@@ -103,31 +99,24 @@
                             Text="Property Binding from ViewModel" />
 
                         <pinView:PINView
-                            BoxBackgroundColor="{StaticResource LightColorC}"
                             IsPassword="True"
                             PINLength="5"
                             PINValue="{Binding PIN1}"
-                            Style="{StaticResource PINViewStyle}"
-                            Color="{StaticResource ColorC}" />
+                            Style="{StaticResource PINViewStyle}" />
 
                         <pinView:PINView
-                            BoxBackgroundColor="{StaticResource LightColorC}"
                             IsPassword="False"
                             PINInputType="Numeric"
                             PINLength="5"
                             PINValue="{Binding PIN2}"
-                            Style="{StaticResource PINViewStyle}"
-                            Color="{StaticResource ColorC}" />
+                            Style="{StaticResource PINViewStyle}" />
 
                         <Button
                             Margin="30,20"
-                            BackgroundColor="{StaticResource LightColorC}"
-                            BorderColor="{StaticResource ColorC}"
                             Command="{Binding InputPINProgramaticallyCommand}"
                             FontSize="Medium"
                             Style="{StaticResource ButtonStyle}"
-                            Text="{Binding InputPINButtonText}"
-                            TextColor="{StaticResource ColorC}" />
+                            Text="{Binding InputPINButtonText}" />
                     </StackLayout>
                 </VerticalStackLayout>
             </VerticalStackLayout>
