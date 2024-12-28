@@ -1,4 +1,7 @@
-﻿namespace PINView.Maui
+﻿using Microsoft.VisualBasic;
+using PINView.Maui.Helpers;
+
+namespace PINView.Maui
 {
     public partial class PINView
     {
@@ -16,7 +19,7 @@
               nameof(BoxStrokeThickness),
               typeof(double),
               typeof(PINView),
-              defaultValue: 1.0,
+              defaultValue: Helpers.Constants.DefaultBoxStrokeThickness,
               defaultBindingMode: BindingMode.OneWay,
               propertyChanged: BoxStrokeThicknessPropertyChanged);
 
@@ -24,7 +27,7 @@
         {
             var control = (PINView)bindable;
 
-            // Apply the BoxStrokeThickness only if it is different then the value in "Color" Property
+            // Apply the BoxStrokeThickness only if it is different then the value in "BoxStrokeThickness" Property
             control.PINBoxContainer.Children.ToList().ForEach(x =>
             {
                 var boxTemplate = (BoxTemplate)x;

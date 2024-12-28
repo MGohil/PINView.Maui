@@ -6,10 +6,10 @@
     xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
     xmlns:system="clr-namespace:System;assembly=netstandard">
     <ContentView.Content>
-        <Border Stroke="{StaticResource ColorF}" Style="{StaticResource SampleViewsContainerBorderStyle}">
+        <Border Style="{StaticResource SampleViewsContainerBorderStyle}">
             <StackLayout>
 
-                <Label BackgroundColor="{StaticResource LightColorF}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="BoxFocusColor" />
@@ -32,10 +32,8 @@
                     <Label HorizontalTextAlignment="Center" Text="BoxFocusColor = #0000FF (Blue)" />
                     <pinView:PINView
                         x:Name="pinView1"
-                        BoxBackgroundColor="Transparent"
                         BoxFocusColor="#0000FF"
-                        Style="{StaticResource PINViewStyle}"
-                        Color="Red" />
+                        Style="{StaticResource PINViewStyle}" />
 
                     <Label
                         Margin="0,20,0,0"
@@ -43,8 +41,8 @@
                         Text="BoxFocusColor = #000000 (Black)" />
                     <pinView:PINView
                         x:Name="pinView2"
-                        BoxBackgroundColor="Transparent"
                         BoxFocusColor="#000000"
+                        PINLength="5"
                         Style="{StaticResource PINViewStyle}" />
                 </StackLayout>
 

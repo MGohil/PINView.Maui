@@ -6,9 +6,9 @@
     xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
     xmlns:system="clr-namespace:System;assembly=netstandard">
     <ContentView.Content>
-        <Border Stroke="{StaticResource ColorA}" Style="{StaticResource SampleViewsContainerBorderStyle}">
+        <Border Style="{StaticResource SampleViewsContainerBorderStyle}">
             <StackLayout>
-                <Label BackgroundColor="{StaticResource LightColorA}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="BoxSpacing" />
@@ -24,11 +24,9 @@
                     <Label HorizontalTextAlignment="Center" Text="BoxSpacing = 5 (Default)" />
                     <pinView:PINView
                         x:Name="pinView1"
-                        BoxBackgroundColor="{StaticResource LightColorA}"
                         PINLength="4"
                         PINValue="1234"
-                        Style="{StaticResource PINViewStyle}"
-                        Color="{StaticResource ColorA}" />
+                        Style="{StaticResource PINViewStyle}" />
 
                     <Label
                         Margin="0,20,0,0"
@@ -36,12 +34,10 @@
                         Text="BoxSpacing = 20" />
                     <pinView:PINView
                         x:Name="pinView2"
-                        BoxBackgroundColor="{StaticResource LightColorA}"
                         BoxSpacing="20"
-                        PINLength="4"
-                        PINValue="1234"
-                        Style="{StaticResource PINViewStyle}"
-                        Color="{StaticResource ColorA}" />
+                        PINLength="5"
+                        PINValue="12345"
+                        Style="{StaticResource PINViewStyle}" />
 
                     <Label
                         Margin="0,20,0,0"
@@ -49,12 +45,10 @@
                         Text="BoxSpacing = 30" />
                     <pinView:PINView
                         x:Name="pinView3"
-                        BoxBackgroundColor="{StaticResource LightColorA}"
                         BoxSpacing="30"
                         PINLength="4"
                         PINValue="1234"
-                        Style="{StaticResource PINViewStyle}"
-                        Color="{StaticResource ColorA}" />
+                        Style="{StaticResource PINViewStyle}" />
                 </StackLayout>
 
             </StackLayout>

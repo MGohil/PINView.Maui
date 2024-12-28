@@ -6,9 +6,9 @@
     xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
     xmlns:system="clr-namespace:System;assembly=netstandard">
     <ContentView.Content>
-        <Border Stroke="{StaticResource ColorB}" Style="{StaticResource SampleViewsContainerBorderStyle}">
+        <Border Style="{StaticResource SampleViewsContainerBorderStyle}">
             <StackLayout Spacing="0">
-                <Label BackgroundColor="{StaticResource LightColorB}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="BoxBorderColor" />
@@ -29,8 +29,6 @@
                         BoxShape="Square"
                         HorizontalOptions="Center"
                         IsPassword="True"
-                        PINLength="5"
-                        PINValue="12345"
                         Color="{StaticResource ColorB}" />
 
 

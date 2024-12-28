@@ -6,9 +6,9 @@
     xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
     xmlns:system="clr-namespace:System;assembly=netstandard">
     <ContentView.Content>
-        <Border Stroke="{StaticResource ColorB}" Style="{StaticResource SampleViewsContainerBorderStyle}">
+        <Border Style="{StaticResource SampleViewsContainerBorderStyle}">
             <VerticalStackLayout Spacing="0">
-                <Label BackgroundColor="{StaticResource LightColorB}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="AutoDismissKeyboard" />
@@ -29,9 +29,7 @@
                     <pinView:PINView
                         x:Name="pinView1"
                         AutoDismissKeyboard="False"
-                        BoxBackgroundColor="{StaticResource LightColorB}"
-                        Style="{StaticResource PINViewStyle}"
-                        Color="{StaticResource ColorB}" />
+                        Style="{StaticResource PINViewStyle}" />
 
 
                     <Label
@@ -41,9 +39,7 @@
                     <pinView:PINView
                         x:Name="pinView2"
                         AutoDismissKeyboard="True"
-                        BoxBackgroundColor="{StaticResource LightColorB}"
-                        Style="{StaticResource PINViewStyle}"
-                        Color="{StaticResource ColorB}" />
+                        Style="{StaticResource PINViewStyle}" />
                 </VerticalStackLayout>
             </VerticalStackLayout>
         </Border>

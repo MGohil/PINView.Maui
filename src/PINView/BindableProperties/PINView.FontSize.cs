@@ -18,7 +18,7 @@ namespace PINView.Maui
               nameof(FontSize),
               typeof(double),
               typeof(PINView),
-              22.0,
+              Constants.DefaultFontSize,
               defaultBindingMode: BindingMode.OneWay,
               propertyChanged: FontSizePropertyChanged);
 

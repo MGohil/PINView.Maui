@@ -6,7 +6,7 @@
     xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
     xmlns:system="clr-namespace:System;assembly=netstandard">
     <ContentView.Content>
-        <Border Stroke="{StaticResource PrimaryColor}" Style="{StaticResource SampleViewsContainerBorderStyle}">
+        <Border Style="{StaticResource SampleViewsContainerBorderStyle}">
             <VerticalStackLayout>
                 <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
                     <Label.FormattedText>
@@ -34,7 +34,10 @@
                         Margin="0,20,0,0"
                         HorizontalTextAlignment="Center"
                         Text="BoxShape = Circle (Default)" />
-                    <pinView:PINView BoxShape="Circle" Style="{StaticResource PINViewStyle}" />
+                    <pinView:PINView
+                        BoxShape="Circle"
+                        PINLength="5"
+                        Style="{StaticResource PINViewStyle}" />
                 </VerticalStackLayout>
             </VerticalStackLayout>
         </Border>

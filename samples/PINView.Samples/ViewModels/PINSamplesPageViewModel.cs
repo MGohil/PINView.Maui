@@ -11,7 +11,7 @@ namespace PINView.Maui.Samples.ViewModels
             Title = "PIN Samples";
             PINEntryCompletedCommand = new Command<string>(PINEntryCompletedCommandExecute);
             InputPINProgramaticallyCommand = new Command(InputPINProgramaticallyCommandExecute);
-            GoToPINSampleContainerPageCommand = new Command<View>(GoToPINSampleContainerPageCommandExecute);
+            GoToPINSampleContainerPageCommand = new Command<string>(GoToPINSampleContainerPageCommandExecute);
         }
 
         private string pin;
@@ -31,7 +31,7 @@ namespace PINView.Maui.Samples.ViewModels
 
         public Command GoToPINSampleContainerPageCommand { get; set; }
 
-        private void GoToPINSampleContainerPageCommandExecute(View containerViewName)
+        private void GoToPINSampleContainerPageCommandExecute(string containerViewName)
         {
 
             Application.Current.MainPage.Navigation.PushAsync(new PINSampleContainerPage(containerViewName));

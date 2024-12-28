@@ -6,7 +6,6 @@
 
         public PINSampleContainerPageViewModel()
         {
-            Title = "PIN Samples";
             PINEntryCompletedCommand = new Command<string>(PINEntryCompletedCommandExecute);
             InputPINProgramaticallyCommand = new Command(InputPINProgramaticallyCommandExecute);
         }
