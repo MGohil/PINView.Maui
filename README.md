@@ -18,7 +18,6 @@ If you are happy using this control and feeling generous, consider buying me a C
 
 ## Nuget Package
 [![NuGet](https://img.shields.io/nuget/v/PINView.Maui.svg)](https://www.nuget.org/packages/PINView.Maui/)
-https://www.nuget.org/packages/PINView.Maui/
 
 ### Platforms Supported
 - [X] iOS
