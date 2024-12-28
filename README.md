@@ -75,5 +75,6 @@ If you are happy using this control and feeling generous, consider buying me a C
 
 ## Accessibility
 | Property | Type | Default | Description |
+| ----------| --- | --- | --- |
 | AutomationId | string | null | This control uses Hidden Entry behind the scene to hold PIN input value. To work with Automation, you have to set AutomationId of this PINView control, and it will internally set the AutomationId of this hidden Entry. If you set AutomationId of PINView control as 'ConfirmPIN' then AutomationId of hidden Entry will be 'ConfirmPIN_PINView_Entry'. You can get the hidden Entry's AutomationId using HiddenEntryAutomationId property.|
 
