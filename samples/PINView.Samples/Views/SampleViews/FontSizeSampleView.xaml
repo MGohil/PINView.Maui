@@ -45,7 +45,22 @@
                         FontSize="16"
                         Style="{StaticResource PINViewStyle}"
                         Color="{DynamicResource ColorA}" />
-                </StackLayout>
+
+                    <Label
+                      Margin="0,20,0,0"
+                      HorizontalTextAlignment="Center"
+                      Text="FontSize = 32, FontAccessibilityScalingEnabled = False" />
+                    <pinView:PINView
+                      x:Name="pinView3"
+                      BoxBackgroundColor="{DynamicResource LightColorA}"
+                      IsPassword="False"
+                      PINLength="5"
+                      PINValue="12345"
+                      FontSize="32"
+                      FontAccessibilityScalingEnabled="False"
+                      Style="{StaticResource PINViewStyle}"
+                      Color="{DynamicResource ColorA}" />
+        </StackLayout>
             </StackLayout>
         </Border>
     </ContentView.Content>

@@ -1,5 +1,4 @@
 ﻿using PINView.Maui.Helpers;
-using System.ComponentModel;
 using System.Diagnostics;
 
 namespace PINView.Maui
@@ -119,7 +118,7 @@ namespace PINView.Maui
                     if (PINValue.Length >= PINLength)
                     {
                         boxTemplate.SetValueWithAnimation(pinCharsArray[Constants.DefaultPINLength + i - 1]);
-                    }                    
+                    }
                 }
             }
             else if (count > PINLength)
@@ -138,26 +137,34 @@ namespace PINView.Maui
         /// <returns></returns>
         private BoxTemplate CreateBox(char? charValue = null)
         {
-            BoxTemplate boxTemplate = new BoxTemplate();
-            boxTemplate.HeightRequest = BoxSize;
-            boxTemplate.WidthRequest = BoxSize;
-            boxTemplate.BoxBorder.BackgroundColor = BoxBackgroundColor;
-            boxTemplate.CharLabel.FontSize = BoxSize / 2;
-            boxTemplate.CharLabel.FontFamily = FontFamily;
-            boxTemplate.CharLabel.FontAttributes = FontAttributes;
-            boxTemplate.CharLabel.FontSize = FontSize;
+            var boxTemplate = new BoxTemplate
+            {
+                HeightRequest = BoxSize,
+                WidthRequest = BoxSize,
+                BoxBorder =
+                {
+                    BackgroundColor = BoxBackgroundColor
+                },
+                CharLabel =
+                {
+                    FontFamily = FontFamily,
+                    FontAttributes = FontAttributes,
+                    FontSize = FontSize,
+                    FontAutoScalingEnabled = FontAccessibilityScalingEnabled
+                }
+            };
 
             if (DeviceInfo.Platform == DevicePlatform.Android)
             {
-                // Added TapGuesture to all components of the Box so that if we tap anywhere
-                // It still gets the focus. In Android things are not working as expected otherwise.
+                // Added TapGesture to all components of the Box so that if we tap anywhere,
+                // it still gets the focus. On Android things are not working as expected otherwise.
                 boxTemplate.BoxBorder.GestureRecognizers.Add(boxTapGestureRecognizer);
                 boxTemplate.ValueContainer.GestureRecognizers.Add(boxTapGestureRecognizer);
                 boxTemplate.Dot.GestureRecognizers.Add(boxTapGestureRecognizer);
                 boxTemplate.CharLabel.GestureRecognizers.Add(boxTapGestureRecognizer);
             }
             else
-            { 
+            {
                 boxTemplate.GestureRecognizers.Add(boxTapGestureRecognizer);
             }
 
