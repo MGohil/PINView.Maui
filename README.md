@@ -56,6 +56,7 @@ https://www.nuget.org/packages/PINView.Maui/
 | FontSize | double | 20.0 | Sets the Font size of each char Label in PinBoxes |
 | FontAttributes | FontAttributes | None | Sets the FontAttributes of the Char label in each box. Applicable when IsPassword = False |
 | FontFamily | string | System Font | Sets the FontFamily of the Char label in each box. Applicable when IsPassword = False |
+| FontAccessibilityScalingEnabled | Boolean | True | Allows to disable font accessibility scaling, which is enabled by default in MAUI |
 | IsPassword | Boolean | False | Defines whether to show actual input character or hide / secure via Dot |
 | PINInputType | Enum | Numeric | Defines the Input Type from Enum [ Numeric, AlphaNumeric ] |
 | PINLength | Integer | 4 | Defines the Length (No. of Characters) of the PIN |
