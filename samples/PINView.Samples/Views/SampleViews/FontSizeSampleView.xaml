@@ -48,11 +48,10 @@
                       Text="FontSize = 32, FontAccessibilityScalingEnabled = False" />
                     <pinView:PINView
                       x:Name="pinView3"
-                      BoxBackgroundColor="{DynamicResource LightColorA}"
+                      FontSize="32"
                       IsPassword="False"
                       PINLength="5"
                       PINValue="12345"
-                      FontSize="32"
                       FontAccessibilityScalingEnabled="False"
                       Style="{StaticResource PINViewStyle}" />
                 </StackLayout>
