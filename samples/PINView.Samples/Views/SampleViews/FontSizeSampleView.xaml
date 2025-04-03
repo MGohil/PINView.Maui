@@ -6,14 +6,14 @@
     xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
     xmlns:system="clr-namespace:System;assembly=netstandard">
     <ContentView.Content>
-        <Border Stroke="{StaticResource ColorA}" Style="{StaticResource SampleViewsContainerBorderStyle}">
+        <Border Style="{StaticResource SampleViewsContainerBorderStyle}">
             <StackLayout>
 
-                <Label BackgroundColor="{StaticResource LightColorA}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="FontSize" />
-                             <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
                             <Span FontSize="Small" Text="Type : double" />
                             <Span Text="{x:Static system:Environment.NewLine}" />
                             <Span FontSize="Small" Text="Applicable only if IsPassword=False" />
@@ -25,12 +25,10 @@
                     <Label HorizontalTextAlignment="Center" Text="FontSize = 22 (Default)" />
                     <pinView:PINView
                         x:Name="pinView1"
-                        BoxBackgroundColor="{DynamicResource LightColorA}"
                         BoxShape="Circle"
                         IsPassword="False"
                         PINValue="1234"
-                        Style="{StaticResource PINViewStyle}"
-                        Color="{DynamicResource ColorA}" />
+                        Style="{StaticResource PINViewStyle}" />
 
                     <Label
                         Margin="0,20,0,0"
@@ -38,13 +36,11 @@
                         Text="FontSize = 16" />
                     <pinView:PINView
                         x:Name="pinView2"
-                        BoxBackgroundColor="{DynamicResource LightColorA}"
+                        FontSize="16"
                         IsPassword="False"
                         PINLength="5"
                         PINValue="12345"
-                        FontSize="16"
-                        Style="{StaticResource PINViewStyle}"
-                        Color="{DynamicResource ColorA}" />
+                        Style="{StaticResource PINViewStyle}" />
 
                     <Label
                       Margin="0,20,0,0"
@@ -58,9 +54,8 @@
                       PINValue="12345"
                       FontSize="32"
                       FontAccessibilityScalingEnabled="False"
-                      Style="{StaticResource PINViewStyle}"
-                      Color="{DynamicResource ColorA}" />
-        </StackLayout>
+                      Style="{StaticResource PINViewStyle}" />
+                </StackLayout>
             </StackLayout>
         </Border>
     </ContentView.Content>

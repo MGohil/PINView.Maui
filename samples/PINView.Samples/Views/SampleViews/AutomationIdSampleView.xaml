@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentView
-    x:Class="PINView.Maui.Samples.Views.SampleViews.AutoDismissKeyboardSampleView"
+    x:Class="PINView.Maui.Samples.Views.SampleViews.AutomationIdSampleView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
@@ -11,34 +11,30 @@
                 <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="AutoDismissKeyboard" />
+                            <Span Text="AutomationId" />
                             <Span Text="{x:Static system:Environment.NewLine}" />
-                            <Span FontSize="Small" Text="When set to True, Keyboard will be automatically dismissed when all charecter input entries completed" />
+                            <Span FontSize="Small" Text="This control uses Hidden Entry behind the scene to hold PIN input value. To work with Automation, you have to set AutomationId of this PINView control, and it will internally set the AutomationId of this hidden Entry." />
                             <Span Text="{x:Static system:Environment.NewLine}" />
-                            <Span FontSize="Small" Text="Type all chars to see this behaviour" />
                             <Span Text="{x:Static system:Environment.NewLine}" />
-                            <Span FontSize="Small" Text="Type : Boolean" />
+
+                            <Span FontSize="Small" Text="If you set AutomationId of PINView control as 'ConfirmPIN' then AutomationId of hidden Entry will be 'ConfirmPIN_PINView_Entry'." />
                             <Span Text="{x:Static system:Environment.NewLine}" />
-                            <Span FontSize="Small" Text="Default : False" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+
+                            <Span FontSize="Small" Text="You can get the hidden Entry's AutomationId using HiddenEntryAutomationId property." />
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
 
                 <VerticalStackLayout Padding="0,20">
-                    <Label HorizontalTextAlignment="Center" Text="AutoDismissKeyboard = False (Default)" />
+                    <Label
+                        x:Name="pinView1Title"
+                        Margin="10,0"
+                        HorizontalTextAlignment="Center" />
                     <pinView:PINView
                         x:Name="pinView1"
-                        AutoDismissKeyboard="False"
-                        Style="{StaticResource PINViewStyle}" />
-
-
-                    <Label
-                        Margin="0,20,0,0"
-                        HorizontalTextAlignment="Center"
-                        Text="AutoDismissKeyboard = True" />
-                    <pinView:PINView
-                        x:Name="pinView2"
-                        AutoDismissKeyboard="True"
+                        Margin="0,15"
+                        AutomationId="PINView1"
                         Style="{StaticResource PINViewStyle}" />
                 </VerticalStackLayout>
             </VerticalStackLayout>

@@ -30,7 +30,7 @@ internal class BoxTemplate : ContentView
             Padding = new Thickness(0),
             BackgroundColor = Constants.DefaultBoxBackgroundColor,
             Stroke = Constants.DefaultColor,
-            StrokeThickness = 1,
+            StrokeThickness = Constants.DefaultBoxStrokeThickness,
             StrokeShape = new RoundRectangle
             {
                 CornerRadius = new CornerRadius(Constants.DefaultBoxSize / 2),

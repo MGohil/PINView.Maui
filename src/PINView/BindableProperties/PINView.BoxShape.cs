@@ -31,7 +31,7 @@ namespace PINView.Maui
             control.PINBoxContainer.Children.ToList().ForEach(x =>
             {
                 var boxTemplate = (BoxTemplate)x;
-                boxTemplate.SetRadius((BoxShapeType)newValue);
+                boxTemplate.SetRadius((BoxShapeType)newValue, control.BoxCornerRadius);
             });
         }
     }

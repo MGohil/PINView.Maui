@@ -19,7 +19,7 @@
                 Text="Please enter your PIN" />
 
             <pinView:PINView
-                AutoDismissKeyboard="True"
+                AutomationId="2343"
                 BoxFocusAnimation="ZoomInOut"
                 PINEntryCompletedCommand="{Binding PINEntryCompletedCommand}"
                 PINValue="{Binding PIN}"

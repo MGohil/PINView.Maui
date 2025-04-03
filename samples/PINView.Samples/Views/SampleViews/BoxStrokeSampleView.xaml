@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="PINView.Maui.Samples.Views.SampleViews.BoxStrokeSampleView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
+    xmlns:system="clr-namespace:System;assembly=netstandard">
+    <ContentView.Content>
+        <ScrollView>
+            <VerticalStackLayout Padding="0,0,0,20">
+                <Border Style="{StaticResource SampleViewsContainerBorderStyle}">
+                    <StackLayout Spacing="0">
+                        <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="BoxStrokeThickness" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <StackLayout Padding="0,20">
+
+                            <Label HorizontalTextAlignment="Center" Text="BoxStrokeThickness = 1 (Default)" />
+                            <pinView:PINView
+                                BoxShape="Square"
+                                BoxStrokeThickness="1"
+                                HorizontalOptions="Center"
+                                IsPassword="True"
+                                Style="{StaticResource PINViewStyle}" />
+
+
+                            <Label
+                                Margin="0,15,0,0"
+                                HorizontalTextAlignment="Center"
+                                Text="BoxStrokeThickness = 3" />
+                            <pinView:PINView
+                                BoxShape="Square"
+                                BoxStrokeThickness="3"
+                                HorizontalOptions="Center"
+                                IsPassword="True"
+                                PINValue="1234"
+                                Style="{StaticResource PINViewStyle}" />
+
+                            <Label
+                                Margin="0,15,0,0"
+                                HorizontalTextAlignment="Center"
+                                Text="BoxStrokeThickness = 4" />
+                            <pinView:PINView
+                                BoxShape="RoundCorner"
+                                BoxStrokeThickness="4"
+                                HorizontalOptions="Center"
+                                IsPassword="True"
+                                PINLength="5"
+                                PINValue="12"
+                                Style="{StaticResource PINViewStyle}" />
+
+
+                            <Label
+                                Margin="0,15,0,0"
+                                HorizontalTextAlignment="Center"
+                                Text="BoxStrokeThickness = 5" />
+                            <pinView:PINView
+                                BoxShape="Circle"
+                                BoxStrokeThickness="5"
+                                HorizontalOptions="Center"
+                                IsPassword="True"
+                                PINValue="12"
+                                Style="{StaticResource PINViewStyle}" />
+
+                        </StackLayout>
+
+                    </StackLayout>
+                </Border>
+
+                <Border Style="{StaticResource SampleViewsContainerBorderStyle}">
+                    <StackLayout Spacing="0">
+                        <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="BoxStrokeDashArray" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <StackLayout Padding="0,20">
+
+                            <Label HorizontalTextAlignment="Center" Text="BoxStrokeDashArray = 2,2" />
+                            <pinView:PINView
+                                BoxShape="Square"
+                                BoxStrokeDashArray="2,2"
+                                BoxStrokeThickness="2"
+                                HorizontalOptions="Center"
+                                IsPassword="True"
+                                PINLength="5"
+                                Style="{StaticResource PINViewStyle}" />
+
+
+                            <Label
+                                Margin="0,15,0,0"
+                                HorizontalTextAlignment="Center"
+                                Text="BoxStrokeDashArray = 3,3" />
+                            <pinView:PINView
+                                BoxShape="Square"
+                                BoxStrokeDashArray="3,3"
+                                BoxStrokeThickness="2"
+                                HorizontalOptions="Center"
+                                IsPassword="True"
+                                PINValue="1234"
+                                Style="{StaticResource PINViewStyle}" />
+
+                        </StackLayout>
+
+                    </StackLayout>
+                </Border>
+
+                <Border Style="{StaticResource SampleViewsContainerBorderStyle}">
+                    <StackLayout Spacing="0">
+                        <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="BoxStrokeDashOffset" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <StackLayout Padding="0,20">
+
+                            <Label HorizontalTextAlignment="Center" Text="BoxStrokeDashOffset = 1" />
+                            <pinView:PINView
+                                BoxShape="Square"
+                                BoxStrokeDashArray="5,5"
+                                BoxStrokeDashOffset="1"
+                                BoxStrokeThickness="2"
+                                HorizontalOptions="Center"
+                                IsPassword="True"
+                                PINLength="5"
+                                Style="{StaticResource PINViewStyle}" />
+
+
+                            <Label
+                                Margin="0,15,0,0"
+                                HorizontalTextAlignment="Center"
+                                Text="BoxStrokeDashOffset = 3" />
+                            <pinView:PINView
+                                BoxShape="Square"
+                                BoxStrokeDashArray="5,5"
+                                BoxStrokeDashOffset="3"
+                                BoxStrokeThickness="2"
+                                HorizontalOptions="Center"
+                                IsPassword="True"
+                                PINValue="123"
+                                Style="{StaticResource PINViewStyle}" />
+
+                        </StackLayout>
+
+                    </StackLayout>
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

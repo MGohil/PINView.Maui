@@ -25,7 +25,7 @@
 		<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<Version>1.0.2</Version>
+		<Version>1.0.3</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -39,14 +39,10 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="Converters\" />
-		<Folder Include="Platforms\Android\" />
-		<Folder Include="Platforms\MacCatalyst\" />
-		<Folder Include="Platforms\Windows\" />
-		<Folder Include="Platforms\Android\Handlers\" />
 	</ItemGroup>
 	<ItemGroup>
-		<None Include="..\..\arts\Package-Icon.png" Pack="true" PackagePath="\"/>
-		<None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+		<None Include="..\..\arts\Package-Icon.png" Pack="true" PackagePath="\" />
+		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Update="BoxTemplate.cs">

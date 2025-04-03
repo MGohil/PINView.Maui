@@ -6,10 +6,10 @@
     xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
     xmlns:system="clr-namespace:System;assembly=netstandard">
     <ContentView.Content>
-        <Border Stroke="{StaticResource ColorC}" Style="{StaticResource SampleViewsContainerBorderStyle}">
+        <Border Style="{StaticResource SampleViewsContainerBorderStyle}">
             <StackLayout>
 
-                <Label BackgroundColor="{StaticResource LightColorC}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="PINInputType" />
@@ -26,12 +26,10 @@
 
                     <pinView:PINView
                         x:Name="pinView1"
-                        BoxBackgroundColor="{StaticResource LightColorC}"
                         IsPassword="False"
                         PINInputType="Numeric"
                         PINValue="1234"
-                        Style="{StaticResource PINViewStyle}"
-                        Color="{StaticResource ColorC}" />
+                        Style="{StaticResource PINViewStyle}" />
 
                     <Label
                         Margin="0,20,0,0"
@@ -40,12 +38,23 @@
 
                     <pinView:PINView
                         x:Name="pinView2"
-                        BoxBackgroundColor="{StaticResource LightColorC}"
                         IsPassword="False"
                         PINInputType="AlphaNumeric"
-                        PINValue="ABCD"
-                        Style="{StaticResource PINViewStyle}"
-                        Color="{StaticResource ColorC}" />
+                        PINValue="abcd"
+                        Style="{StaticResource PINViewStyle}" />
+
+                    <Label
+                        Margin="0,20,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="PINInputType = AlphaNumericUppercase" />
+
+                    <pinView:PINView
+                        x:Name="pinView3"
+                        IsPassword="False"
+                        PINInputType="AlphaNumericUppercase"
+                        PINValue="A2C3"
+                        Style="{StaticResource PINViewStyle}" />
+
                 </StackLayout>
 
             </StackLayout>

@@ -3,14 +3,14 @@
     x:Class="PINView.Maui.Samples.Views.SampleViews.BoxFocusAnimationSampleView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:system="clr-namespace:System;assembly=netstandard"
-    xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui">
+    xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
+    xmlns:system="clr-namespace:System;assembly=netstandard">
     <ContentView.Content>
-        <Border Stroke="{StaticResource ColorD}" Style="{StaticResource SampleViewsContainerBorderStyle}">
+        <Border Style="{StaticResource SampleViewsContainerBorderStyle}">
 
             <StackLayout Spacing="0">
 
-                <Label BackgroundColor="{StaticResource LightColorD}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="BoxFocusAnimation" />
@@ -32,22 +32,32 @@
                     <Label HorizontalTextAlignment="Center" Text="BoxFocusAnimation = ZoomInOut" />
                     <pinView:PINView
                         x:Name="pinView1"
-                        BoxBackgroundColor="{StaticResource LightColorD}"
                         BoxFocusAnimation="ZoomInOut"
                         IsPassword="True"
-                        Style="{StaticResource PINViewStyle}"
-                        Color="{StaticResource ColorD}" />
+                        Style="{StaticResource PINViewStyle}" />
 
 
-                    <Label HorizontalTextAlignment="Center" Text="BoxFocusAnimation = ScaleUp" />
+                    <Label
+                        Margin="0,15,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="BoxFocusAnimation = ScaleUp" />
                     <pinView:PINView
                         x:Name="pinView2"
-                        BoxBackgroundColor="{StaticResource LightColorD}"
                         BoxFocusAnimation="ScaleUp"
                         BoxSpacing="10"
                         IsPassword="True"
-                        Style="{StaticResource PINViewStyle}"
-                        Color="{StaticResource ColorD}" />
+                        Style="{StaticResource PINViewStyle}" />
+
+                    <Label
+                        Margin="0,15,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="BoxFocusAnimation = ScaleUp" />
+                    <pinView:PINView
+                        BoxFocusAnimation="ScaleUp"
+                        BoxSpacing="10"
+                        IsPassword="True"
+                        PINLength="5"
+                        Style="{StaticResource PINViewStyle}" />
 
 
                 </StackLayout>

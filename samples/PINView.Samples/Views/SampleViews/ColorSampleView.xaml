@@ -6,10 +6,10 @@
     xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
     xmlns:system="clr-namespace:System;assembly=netstandard">
     <ContentView.Content>
-        <Border Stroke="{StaticResource ColorE}" Style="{StaticResource SampleViewsContainerBorderStyle}">
+        <Border Style="{StaticResource SampleViewsContainerBorderStyle}">
             <VerticalStackLayout>
 
-                <Label BackgroundColor="{StaticResource LightColorE}" Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="Color" />
@@ -22,10 +22,9 @@
                 </Label>
 
                 <VerticalStackLayout Padding="0,20">
-                    <Label HorizontalTextAlignment="Center" Text="Color = Accent (Default)" />
+                    <Label HorizontalTextAlignment="Center" Text="Color = (Default)" />
                     <pinView:PINView
                         x:Name="pinView1"
-                        BoxBackgroundColor="Transparent"
                         BoxShape="Circle"
                         HorizontalOptions="Center"
                         PINLength="5"
@@ -37,11 +36,10 @@
                         Text="Color = Green" />
                     <pinView:PINView
                         x:Name="pinView2"
-                        BoxBackgroundColor="Transparent"
                         BoxShape="Circle"
                         HorizontalOptions="Center"
-                        PINLength="5"
-                        PINValue="12345"
+                        PINLength="4"
+                        PINValue="1234"
                         Color="Green" />
 
                     <Label
@@ -50,7 +48,6 @@
                         Text="Color = Blue" />
                     <pinView:PINView
                         x:Name="pinView3"
-                        BoxBackgroundColor="Transparent"
                         BoxShape="Circle"
                         HorizontalOptions="Center"
                         PINLength="5"

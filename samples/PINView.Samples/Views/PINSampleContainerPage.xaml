@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="PINView.Maui.Samples.Views.PINSampleContainerPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+    xmlns:sampleViews="clr-namespace:PINView.Maui.Samples.Views.SampleViews"
+    xmlns:vm="clr-namespace:PINView.Maui.Samples.ViewModels"
+    Title="PINView Sample"
+    ios:Page.UseSafeArea="true">
+    <ContentPage.BindingContext>
+        <vm:PINSampleContainerPageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout x:Name="stackLayout"/>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,11 +1,10 @@
-﻿using System;
-using Android.Views.InputMethods;
+﻿using Android.Views.InputMethods;
 using AndroidX.AppCompat.Widget;
 using static Android.Views.View;
 
 namespace PINView.Maui.Platforms.Android.Handlers
 {
-    public partial class EntryHandler : Microsoft.Maui.Handlers.EntryHandler
+    public sealed class HiddenPinEntryHandler : Microsoft.Maui.Handlers.EntryHandler
     {
         protected override void ConnectHandler(AppCompatEditText platformView)
         {
@@ -23,13 +22,13 @@ namespace PINView.Maui.Platforms.Android.Handlers
         {
             if (args.HasFocus)
             {
-                InputMethodManager inputMethodManager = (InputMethodManager)global::Android.App.Application.Context.GetSystemService(global::Android.Content.Context.InputMethodService);
-                inputMethodManager.ShowSoftInput(PlatformView, ShowFlags.Forced);
+                var inputMethodManager = (InputMethodManager)global::Android.App.Application.Context.GetSystemService(global::Android.Content.Context.InputMethodService);
+                inputMethodManager?.ShowSoftInput(PlatformView, ShowFlags.Forced);
             }
             else
             {
-                InputMethodManager inputMethodManager = (InputMethodManager)global::Android.App.Application.Context.GetSystemService(global::Android.Content.Context.InputMethodService);
-                inputMethodManager.HideSoftInputFromWindow(PlatformView.WindowToken, HideSoftInputFlags.None);
+                var inputMethodManager = (InputMethodManager)global::Android.App.Application.Context.GetSystemService(global::Android.Content.Context.InputMethodService);
+                inputMethodManager?.HideSoftInputFromWindow(PlatformView.WindowToken, HideSoftInputFlags.None);
             }
         }
     }

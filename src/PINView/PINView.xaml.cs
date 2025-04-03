@@ -9,7 +9,7 @@ namespace PINView.Maui
         #region Fields
 
         /// <summary>
-        /// A TapGuesture Recognizer to invoke when user tap on any PIN box. This will help bring up the soft keyboard
+        /// A TapGesture Recognizer to invoke when user tap on any PIN box. This will help bring up the soft keyboard
         /// </summary>
         private readonly TapGestureRecognizer boxTapGestureRecognizer;
 
@@ -18,6 +18,9 @@ namespace PINView.Maui
         /// entry completed
         /// </summary>
         public event EventHandler<PINCompletedEventArgs> PINEntryCompleted;
+
+        public string HiddenEntryAutomationId => hiddenTextEntry.AutomationId;
+
 
         #endregion Fields
 
@@ -50,10 +53,10 @@ namespace PINView.Maui
 
         private void HiddenTextEntry_Focused(object sender, FocusEventArgs e)
         {
-            var length = PINValue == null ? 0 : PINValue.Length;
+            var length = PINValue?.Length ?? 0;
 
             // When textbox is focused, Android brings cursor to the start of value, instead of end To fix this issue,
-            // added this programatic cursor movement to the last when focused
+            // added this programmatic cursor movement to the last when focused
             hiddenTextEntry.CursorPosition = length;
 
             var pinBoxArray = PINBoxContainer.Children.Select(x => x as BoxTemplate).ToArray();
@@ -98,6 +101,7 @@ namespace PINView.Maui
         public void CreateControl()
         {
             hiddenTextEntry.MaxLength = PINLength;
+
             SetInputType(PINInputType);
 
             var count = PINBoxContainer.Children.Count;
@@ -137,27 +141,35 @@ namespace PINView.Maui
         /// <returns></returns>
         private BoxTemplate CreateBox(char? charValue = null)
         {
-            var boxTemplate = new BoxTemplate
+            BoxTemplate boxTemplate = new BoxTemplate();
+            boxTemplate.HeightRequest = BoxSize;
+            boxTemplate.WidthRequest = BoxSize;
+
+            boxTemplate.BoxBorder.HeightRequest = BoxSize;
+            boxTemplate.BoxBorder.WidthRequest = BoxSize;
+
+            // If FontSize is default, but BoxSize is changed, then BoxSize will auto adjust the font size.
+            if (FontSize == Constants.DefaultFontSize && BoxSize != Constants.DefaultBoxSize)
             {
-                HeightRequest = BoxSize,
-                WidthRequest = BoxSize,
-                BoxBorder =
-                {
-                    BackgroundColor = BoxBackgroundColor
-                },
-                CharLabel =
-                {
-                    FontFamily = FontFamily,
-                    FontAttributes = FontAttributes,
-                    FontSize = FontSize,
-                    FontAutoScalingEnabled = FontAccessibilityScalingEnabled
-                }
-            };
+                boxTemplate.CharLabel.FontSize = ((double)BoxSize / 2);
+            }
+            else 
+            {
+                boxTemplate.CharLabel.FontSize = FontSize;
+            }
+
+            boxTemplate.Dot.HeightRequest = DotSize;
+            boxTemplate.Dot.WidthRequest = DotSize;
+
+            boxTemplate.BoxBorder.BackgroundColor = BoxBackgroundColor;
+            boxTemplate.CharLabel.FontFamily = FontFamily;
+            boxTemplate.CharLabel.FontAttributes = FontAttributes;
+            boxTemplate.FontAutoScalingEnabled = FontAccessibilityScalingEnabled;
 
             if (DeviceInfo.Platform == DevicePlatform.Android)
             {
-                // Added TapGesture to all components of the Box so that if we tap anywhere,
-                // it still gets the focus. On Android things are not working as expected otherwise.
+                // Added TapGesture to all components of the Box so that if we tap anywhere
+                // It still gets the focus. In Android things are not working as expected otherwise.
                 boxTemplate.BoxBorder.GestureRecognizers.Add(boxTapGestureRecognizer);
                 boxTemplate.ValueContainer.GestureRecognizers.Add(boxTapGestureRecognizer);
                 boxTemplate.Dot.GestureRecognizers.Add(boxTapGestureRecognizer);
@@ -170,6 +182,8 @@ namespace PINView.Maui
 
             boxTemplate.BoxFocusColor = BoxFocusColor;
             boxTemplate.FocusAnimationType = BoxFocusAnimation;
+            boxTemplate.BoxBorder.StrokeThickness = BoxStrokeThickness;
+            boxTemplate.BoxBorder.StrokeDashArray = BoxStrokeDashArray;
             boxTemplate.SecureMode(IsPassword);
             boxTemplate.SetColor(Color, BoxBorderColor);
             boxTemplate.SetRadius(BoxShape);
@@ -188,7 +202,7 @@ namespace PINView.Maui
         #region Events
 
         /// <summary>
-        /// Invokes when user type the PIN, Assignes value to PINValue property or Text changes in the hidden textbox
+        /// Invokes when user type the PIN, Assigns value to PINValue property or Text changes in the hidden textbox
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -203,21 +217,23 @@ namespace PINView.Maui
             // last entry / or animation.
             await Task.Delay(200);
 
-            if (e.NewTextValue.Length >= PINLength)
+            if (e.NewTextValue.Length < PINLength)
             {
-                // Dismiss the keyboard, once entry is completed up to the defined length and if AutoDismissKeyboard
-                // property is true
-                if (AutoDismissKeyboard == true)
-                {
-                    (sender as Entry).Unfocus();
-                    Debug.WriteLine($"{nameof(PINView)}: PIN Entry UnFocused");
-                }
-
-                Debug.WriteLine($"{nameof(PINView)}: PIN Entry Completed");
-
-                PINEntryCompleted?.Invoke(this, new PINCompletedEventArgs(PINValue));
-                PINEntryCompletedCommand?.Execute(PINValue);
+                return;
             }
+
+            // Dismiss the keyboard, once entry is completed up to the defined length and if AutoDismissKeyboard
+            // property is true
+            if (AutoDismissKeyboard == true)
+            {
+                (sender as HiddenPinEntry)?.Unfocus();
+                Debug.WriteLine($"{nameof(PINView)}: PIN Entry UnFocused");
+            }
+
+            Debug.WriteLine($"{nameof(PINView)}: PIN Entry Completed");
+
+            PINEntryCompleted?.Invoke(this, new PINCompletedEventArgs(PINValue));
+            PINEntryCompletedCommand?.Execute(PINValue);
         }
 
         #endregion Events

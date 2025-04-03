@@ -6,12 +6,14 @@ namespace PINView.Maui.Samples.ViewModels
     {
         public MainPageViewModel()
         {
-            Title = "PIN Samples";
+            Title = "PINView.Maui";
 
             GoToPINLoginPageCommand = new Command(GoToPINLoginPageCommandExecute);
             GoToCreatePINPageCommand = new Command(GoToCreatePINPageCommandExecute);
             GoToChangePINPageCommand = new Command(GoToChangePINPageCommandExecute);
             GoToPINSamplesPageCommand = new Command(GoToPINSamplesPageCommandExecute);
+            GoToPINSampleContainerPageCommand = new Command<string>(GoToPINSampleContainerPageCommandExecute);
+
         }
 
         public Command GoToPINLoginPageCommand { get; set; }
@@ -40,6 +42,14 @@ namespace PINView.Maui.Samples.ViewModels
         private void GoToPINSamplesPageCommandExecute()
         {
             Application.Current.MainPage.Navigation.PushAsync(new PINSamplesPage());
+        }
+
+        public Command GoToPINSampleContainerPageCommand { get; set; }
+
+        private void GoToPINSampleContainerPageCommandExecute(string containerViewName)
+        {
+
+            Application.Current.MainPage.Navigation.PushAsync(new PINSampleContainerPage(containerViewName));
         }
     }
 }

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="PINView.Maui.Samples.Views.SampleViews.BoxCornerRadiusSampleView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pinView="clr-namespace:PINView.Maui;assembly=PINView.Maui"
+    xmlns:system="clr-namespace:System;assembly=netstandard">
+    <ContentView.Content>
+        <Border Style="{StaticResource SampleViewsContainerBorderStyle}">
+            <StackLayout>
+
+                <Label Style="{StaticResource SampleViewsHeaderLabelStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="BoxCornerRadius" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Type : double" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Default : 10" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span FontSize="Small" Text="Applicable for only RoundCorner Shape. Ignored for any other shape." />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <StackLayout Padding="0,20">
+                    <Label HorizontalTextAlignment="Center" Text="BoxCornerRadius = 10 (Default)" />
+                    <pinView:PINView
+                        BoxShape="RoundCorner"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource PINViewStyle}" />
+
+                    <Label
+                        Margin="0,15,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="BoxCornerRadius = 15" />
+                    <pinView:PINView
+                        BoxCornerRadius="15"
+                        BoxShape="RoundCorner"
+                        HorizontalOptions="Center"
+                        PINLength="5"
+                        PINValue="12345"
+                        Style="{StaticResource PINViewStyle}" />
+
+                    <Label
+                        Margin="0,15,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="BoxCornerRadius = 20" />
+                    <pinView:PINView
+                        BoxCornerRadius="20"
+                        BoxShape="RoundCorner"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource PINViewStyle}" />
+
+                    <BoxView
+                        Margin="0,15,0,0"
+                        BackgroundColor="{StaticResource SeparatorLineColor}"
+                        HeightRequest="1" />
+
+
+                    <Label
+                        Margin="0,15,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="BoxCornerRadius = 20 ignored for Square Shape" />
+                    <pinView:PINView
+                        BoxCornerRadius="20"
+                        BoxShape="Square"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource PINViewStyle}" />
+
+                    <Label
+                        Margin="0,15,0,0"
+                        HorizontalTextAlignment="Center"
+                        Text="BoxCornerRadius = 5 ignored for Circle Shape" />
+                    <pinView:PINView
+                        BoxCornerRadius="5"
+                        BoxShape="Circle"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource PINViewStyle}" />
+                </StackLayout>
+            </StackLayout>
+        </Border>
+    </ContentView.Content>
+</ContentView>
