@@ -5,7 +5,7 @@ public partial class PINView
     /// <summary>
     /// Enables or disables the font accessibility scaling for the PIN Box labels.
     /// </summary>
-    public bool FontAccessibilityScalingEnabled
+    public bool FontAutoScalingEnabled
     {
         get => (bool)GetValue(FontAccessibilityScalingEnabledProperty);
         set => SetValue(FontAccessibilityScalingEnabledProperty, value);
@@ -13,7 +13,7 @@ public partial class PINView
 
     public static readonly BindableProperty FontAccessibilityScalingEnabledProperty =
         BindableProperty.Create(
-            nameof(FontAccessibilityScalingEnabled),
+            nameof(FontAutoScalingEnabled),
             typeof(bool),
             typeof(PINView),
             defaultValue: true,

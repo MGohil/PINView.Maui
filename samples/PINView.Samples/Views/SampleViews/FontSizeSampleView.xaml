@@ -52,7 +52,7 @@
                       IsPassword="False"
                       PINLength="5"
                       PINValue="12345"
-                      FontAccessibilityScalingEnabled="False"
+                      FontAutoScalingEnabled="False"
                       Style="{StaticResource PINViewStyle}" />
                 </StackLayout>
             </StackLayout>
