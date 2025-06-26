@@ -7,11 +7,11 @@ public partial class PINView
     /// </summary>
     public bool FontAutoScalingEnabled
     {
-        get => (bool)GetValue(FontAccessibilityScalingEnabledProperty);
-        set => SetValue(FontAccessibilityScalingEnabledProperty, value);
+        get => (bool)GetValue(FontAutoScalingEnabledProperty);
+        set => SetValue(FontAutoScalingEnabledProperty, value);
     }
 
-    public static readonly BindableProperty FontAccessibilityScalingEnabledProperty =
+    public static readonly BindableProperty FontAutoScalingEnabledProperty =
         BindableProperty.Create(
             nameof(FontAutoScalingEnabled),
             typeof(bool),
