@@ -41,6 +41,19 @@
                         PINLength="5"
                         PINValue="12345"
                         Style="{StaticResource PINViewStyle}" />
+
+                    <Label
+                      Margin="0,20,0,0"
+                      HorizontalTextAlignment="Center"
+                      Text="FontSize = 32, FontAutoScalingEnabled = False" />
+                    <pinView:PINView
+                      x:Name="pinView3"
+                      FontSize="32"
+                      IsPassword="False"
+                      PINLength="5"
+                      PINValue="12345"
+                      FontAutoScalingEnabled="False"
+                      Style="{StaticResource PINViewStyle}" />
                 </StackLayout>
             </StackLayout>
         </Border>

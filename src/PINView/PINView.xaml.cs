@@ -164,6 +164,7 @@ namespace PINView.Maui
             boxTemplate.BoxBorder.BackgroundColor = BoxBackgroundColor;
             boxTemplate.CharLabel.FontFamily = FontFamily;
             boxTemplate.CharLabel.FontAttributes = FontAttributes;
+            boxTemplate.CharLabel.FontAutoScalingEnabled = FontAutoScalingEnabled;
 
             if (DeviceInfo.Platform == DevicePlatform.Android)
             {
