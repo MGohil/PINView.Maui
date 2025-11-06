@@ -33,4 +33,3 @@ namespace PINView.Maui.Platforms.Android.Handlers
         }
     }
 }
-
