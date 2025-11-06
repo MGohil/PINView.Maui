@@ -10,10 +10,10 @@
             <!--  This Textbox stays behind the scene to bring up the keyboard and take user input  -->
             <maui:HiddenPinEntry
                 x:Name="hiddenTextEntry"
+                AutomationProperties.IsInAccessibleTree="true"
                 HorizontalOptions="Center"
                 Keyboard="Numeric"
-                Opacity="0"
-                WidthRequest="50">
+                WidthRequest="{Binding Width, Source={x:Reference PINBoxContainer}, x:DataType=HorizontalStackLayout}">
                 <maui:HiddenPinEntry.FontSize>
                     <OnPlatform x:TypeArguments="x:Double">
                         <On Platform="Android" Value="18" />
@@ -21,6 +21,8 @@
                         <On Platform="WinUI" Value="18" />
                     </OnPlatform>
                 </maui:HiddenPinEntry.FontSize>
+                <SemanticProperties.Description>PIN entry field</SemanticProperties.Description>
+                <SemanticProperties.Hint>Enter your PIN code</SemanticProperties.Hint>
             </maui:HiddenPinEntry>
             <HorizontalStackLayout
                 x:Name="PINBoxContainer"

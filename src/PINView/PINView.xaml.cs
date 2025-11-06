@@ -37,6 +37,9 @@ namespace PINView.Maui
             boxTapGestureRecognizer = new TapGestureRecognizer() { Command = new Command(() => { BoxTapCommandExecute(); }) };
 
             CreateControl();
+
+            AutomationProperties.SetExcludedWithChildren(PINBoxContainer, true);
+            AutomationProperties.SetIsInAccessibleTree(PINBoxContainer, false);
         }
 
         private void HiddenTextEntry_Unfocused(object sender, FocusEventArgs e)
@@ -153,7 +156,7 @@ namespace PINView.Maui
             {
                 boxTemplate.CharLabel.FontSize = ((double)BoxSize / 2);
             }
-            else 
+            else
             {
                 boxTemplate.CharLabel.FontSize = FontSize;
             }

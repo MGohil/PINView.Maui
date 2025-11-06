@@ -1,4 +1,8 @@
-﻿namespace PINView.Maui;
+﻿#if ANDROID
+using Android.Content.Res;
+#endif
+
+namespace PINView.Maui;
 
 public static class Registration
 {
@@ -9,8 +13,25 @@ public static class Registration
         {
             h.AddHandler<HiddenPinEntry, Platforms.Android.Handlers.HiddenPinEntryHandler>();
         });
-#endif
 
+
+        Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(HiddenPinEntry), (handler, view) =>
+        {
+            if (view is Entry)
+            {
+                // Remove underline
+                handler.PlatformView.BackgroundTintList = ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
+
+                // Change placeholder text color
+                handler.PlatformView.SetHintTextColor(ColorStateList.ValueOf(Android.Graphics.Color.Transparent));
+
+                handler.PlatformView.SetTextColor(Android.Graphics.Color.Transparent);
+
+                handler.PlatformView.SetCursorVisible(false);
+            }
+        });
+
+#endif
         return builder;
     }
 }
