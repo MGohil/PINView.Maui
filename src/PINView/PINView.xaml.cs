@@ -46,7 +46,7 @@ namespace PINView.Maui
         {
             var pinBoxArray = PINBoxContainer.Children.Select(x => x as BoxTemplate).ToArray();
 
-            for(int i = 0; i < PINLength; i++)
+            for (int i = 0; i < PINLength; i++)
             {
                 pinBoxArray[i].UnFocusAnimation();
             }
@@ -64,15 +64,15 @@ namespace PINView.Maui
 
             var pinBoxArray = PINBoxContainer.Children.Select(x => x as BoxTemplate).ToArray();
 
-            if(length == PINLength)
+            if (length == PINLength)
             {
                 pinBoxArray[length - 1].FocusAnimation();
             }
             else
             {
-                for(int i = 0; i < PINLength; i++)
+                for (int i = 0; i < PINLength; i++)
                 {
-                    if(i == length)
+                    if (i == length)
                     {
                         pinBoxArray[i].FocusAnimation();
                     }
@@ -109,12 +109,12 @@ namespace PINView.Maui
 
             var count = PINBoxContainer.Children.Count;
 
-            if(count < PINLength)
+            if (count < PINLength)
             {
                 int newBoxesToAdd = PINLength - count;
                 char[] pinCharsArray = PINValue.ToCharArray();
 
-                for(int i = 1; i <= newBoxesToAdd; i++)
+                for (int i = 1; i <= newBoxesToAdd; i++)
                 {
                     BoxTemplate boxTemplate = CreateBox();
                     PINBoxContainer.Children.Add(boxTemplate);
@@ -122,16 +122,16 @@ namespace PINView.Maui
                     // When we assign PINValue in XAML directly, the Boxes outside the default length (4), will not get
                     // any value in it, eventhough we have assigned it in XAML To correct this behavior, we have
                     // programatically assigned value to those Boxes which are added after the Default Length
-                    if(PINValue.Length >= PINLength)
+                    if (PINValue.Length >= PINLength)
                     {
                         boxTemplate.SetValueWithAnimation(pinCharsArray[Constants.DefaultPINLength + i - 1]);
                     }
                 }
             }
-            else if(count > PINLength)
+            else if (count > PINLength)
             {
                 int boxesToRemove = count - PINLength;
-                for(int i = 1; i <= boxesToRemove; i++)
+                for (int i = 1; i <= boxesToRemove; i++)
                 {
                     PINBoxContainer.Children.RemoveAt(PINBoxContainer.Children.Count - 1);
                 }
@@ -152,7 +152,7 @@ namespace PINView.Maui
             boxTemplate.BoxBorder.WidthRequest = BoxSize;
 
             // If FontSize is default, but BoxSize is changed, then BoxSize will auto adjust the font size.
-            if(FontSize == Constants.DefaultFontSize && BoxSize != Constants.DefaultBoxSize)
+            if (FontSize == Constants.DefaultFontSize && BoxSize != Constants.DefaultBoxSize)
             {
                 boxTemplate.CharLabel.FontSize = ((double)BoxSize / 2);
             }
@@ -178,7 +178,7 @@ namespace PINView.Maui
             boxTemplate.SetRadius(BoxShape);
             boxTemplate.ShrinkAnimation();
 
-            if(charValue.HasValue)
+            if (charValue.HasValue)
             {
                 boxTemplate.SetValueWithAnimation(charValue.Value);
             }
@@ -206,14 +206,14 @@ namespace PINView.Maui
             // last entry / or animation.
             await Task.Delay(200);
 
-            if(e.NewTextValue.Length < PINLength)
+            if (e.NewTextValue.Length < PINLength)
             {
                 return;
             }
 
             // Dismiss the keyboard, once entry is completed up to the defined length and if AutoDismissKeyboard
             // property is true
-            if(AutoDismissKeyboard == true)
+            if (AutoDismissKeyboard == true)
             {
                 (sender as HiddenPinEntry)?.Unfocus();
                 Debug.WriteLine($"{nameof(PINView)}: PIN Entry UnFocused");
@@ -236,7 +236,7 @@ namespace PINView.Maui
         {
             Debug.WriteLine($"{nameof(PINView)}: Box Tapped");
 
-            if(DeviceInfo.Platform == DevicePlatform.WinUI)
+            if (DeviceInfo.Platform == DevicePlatform.WinUI)
             {
                 // https://xamarin.github.io/bugzilla-archives/55/55245/bug.html
                 await Task.Delay(1);
