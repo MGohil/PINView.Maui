@@ -7,10 +7,17 @@
     xmlns:maui="clr-namespace:PINView.Maui">
     <ContentView.Content>
         <Grid HorizontalOptions="Start">
-            <!--  This Textbox stays behind the scene to bring up the keyboard and take user input  -->
+            <HorizontalStackLayout
+                x:Name="PINBoxContainer"
+                AutomationProperties.ExcludedWithChildren="True"
+                AutomationProperties.IsInAccessibleTree="False"
+                Spacing="{x:Static helpers:Constants.DefaultBoxSpacing}" />
+
+            <!--  This Textbox stays on top of the control, and is what the user interacts with  -->
             <maui:HiddenPinEntry
                 x:Name="hiddenTextEntry"
                 AutomationProperties.IsInAccessibleTree="true"
+                HeightRequest="{Binding Height, Source={x:Reference PINBoxContainer}, x:DataType=HorizontalStackLayout}"
                 HorizontalOptions="Center"
                 Keyboard="Numeric"
                 WidthRequest="{Binding Width, Source={x:Reference PINBoxContainer}, x:DataType=HorizontalStackLayout}">
@@ -24,10 +31,6 @@
                 <SemanticProperties.Description>PIN entry field</SemanticProperties.Description>
                 <SemanticProperties.Hint>Enter your PIN code</SemanticProperties.Hint>
             </maui:HiddenPinEntry>
-            <HorizontalStackLayout
-                x:Name="PINBoxContainer"
-                InputTransparent="False"
-                Spacing="{x:Static helpers:Constants.DefaultBoxSpacing}" />
         </Grid>
     </ContentView.Content>
 </ContentView>

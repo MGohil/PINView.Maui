@@ -17,7 +17,7 @@ public static class Registration
 
         Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(HiddenPinEntry), (handler, view) =>
         {
-            if (view is Entry)
+            if(view is HiddenPinEntry)
             {
                 // Remove underline
                 handler.PlatformView.BackgroundTintList = ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
@@ -30,8 +30,25 @@ public static class Registration
                 handler.PlatformView.SetCursorVisible(false);
             }
         });
-
 #endif
+
+#if IOS || MACCATALYST
+        Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(HiddenPinEntry), (handler, view) =>
+        {
+            if(view is HiddenPinEntry)
+            {
+                handler.PlatformView.BorderStyle = UIKit.UITextBorderStyle.None;
+
+                handler.PlatformView.BackgroundColor = UIKit.UIColor.Clear;
+
+                handler.PlatformView.TextColor = UIKit.UIColor.Clear;
+
+                handler.PlatformView.TintColor = UIKit.UIColor.Clear;
+            }
+        });
+#endif
+
+
         return builder;
     }
 }
