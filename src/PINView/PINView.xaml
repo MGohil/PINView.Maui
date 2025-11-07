@@ -4,7 +4,8 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:helpers="clr-namespace:PINView.Maui.Helpers"
-    xmlns:maui="clr-namespace:PINView.Maui">
+    xmlns:maui="clr-namespace:PINView.Maui"
+    x:DataType="maui:PINView">
     <ContentView.Content>
         <Grid HorizontalOptions="Start">
             <HorizontalStackLayout
@@ -20,17 +21,10 @@
                 HeightRequest="{Binding Height, Source={x:Reference PINBoxContainer}, x:DataType=HorizontalStackLayout}"
                 HorizontalOptions="Center"
                 Keyboard="Numeric"
-                WidthRequest="{Binding Width, Source={x:Reference PINBoxContainer}, x:DataType=HorizontalStackLayout}">
-                <maui:HiddenPinEntry.FontSize>
-                    <OnPlatform x:TypeArguments="x:Double">
-                        <On Platform="Android" Value="18" />
-                        <On Platform="iOS" Value="22" />
-                        <On Platform="WinUI" Value="18" />
-                    </OnPlatform>
-                </maui:HiddenPinEntry.FontSize>
-                <SemanticProperties.Description>PIN entry field</SemanticProperties.Description>
-                <SemanticProperties.Hint>Enter your PIN code</SemanticProperties.Hint>
-            </maui:HiddenPinEntry>
+                MaxLength="{Binding PINLength, Source={RelativeSource AncestorType={x:Type ContentView}, AncestorLevel=1}}"
+                SemanticProperties.Description="{Binding SemanticDescription, Source={RelativeSource AncestorType={x:Type ContentView}, AncestorLevel=1}}"
+                SemanticProperties.Hint="{Binding SemanticHint, Source={RelativeSource AncestorType={x:Type ContentView}, AncestorLevel=1}}"
+                WidthRequest="{Binding Width, Source={x:Reference PINBoxContainer}, x:DataType=HorizontalStackLayout}" />
         </Grid>
     </ContentView.Content>
 </ContentView>
