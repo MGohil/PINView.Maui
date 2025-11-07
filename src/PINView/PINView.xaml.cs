@@ -144,11 +144,9 @@ namespace PINView.Maui
         /// <returns></returns>
         private BoxTemplate CreateBox(char? charValue = null)
         {
-            BoxTemplate boxTemplate = new()
-            {
-                HeightRequest = BoxSize,
-                WidthRequest = BoxSize
-            };
+            BoxTemplate boxTemplate = new BoxTemplate();
+            boxTemplate.HeightRequest = BoxSize;
+            boxTemplate.WidthRequest = BoxSize;
 
             boxTemplate.BoxBorder.HeightRequest = BoxSize;
             boxTemplate.BoxBorder.WidthRequest = BoxSize;
