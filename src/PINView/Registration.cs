@@ -48,6 +48,15 @@ public static class Registration
         });
 #endif
 
+#if WINDOWS
+        Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(HiddenPinEntry), (handler, view) =>
+        {
+            if(view is HiddenPinEntry)
+            {
+                handler.PlatformView.Opacity = 0;
+            }
+        });
+#endif
 
         return builder;
     }
