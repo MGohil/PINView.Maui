@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net10.0-android;net10.0-ios;net10.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net10.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
@@ -31,11 +31,11 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
-	  <CreatePackage>false</CreatePackage>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net10.0-ios|AnyCPU'">
+		<CreatePackage>false</CreatePackage>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
-	  <CreatePackage>false</CreatePackage>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0-ios|AnyCPU'">
+		<CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
@@ -52,18 +52,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Resources\Images\" />
+		<Folder Include="Resources\Images\" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\..\src\PINView\PINView.Maui.csproj" />
+		<ProjectReference Include="..\..\src\PINView\PINView.Maui.csproj" />
 	</ItemGroup>
 	<ItemGroup>
-	  <None Remove="Resources\Fonts\Fasthand-Regular.ttf" />
+		<None Remove="Resources\Fonts\Fasthand-Regular.ttf" />
 	</ItemGroup>
 	<ItemGroup>
-	  <BundleResource Include="Resources\Fonts\Fasthand-Regular.ttf" />
+		<BundleResource Include="Resources\Fonts\Fasthand-Regular.ttf" />
 	</ItemGroup>
 	<ItemGroup>
-	  <MauiFont Remove="Resources\Fonts\Fasthand-Regular.ttf" />
+		<MauiFont Remove="Resources\Fonts\Fasthand-Regular.ttf" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Update="Microsoft.Maui.Controls" Version="10.0.11" />
 	</ItemGroup>
 </Project>

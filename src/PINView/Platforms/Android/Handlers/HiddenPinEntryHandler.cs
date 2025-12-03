@@ -1,18 +1,18 @@
 ﻿using Android.Views.InputMethods;
-using AndroidX.AppCompat.Widget;
+using Microsoft.Maui.Platform;
 using static Android.Views.View;
 
 namespace PINView.Maui.Platforms.Android.Handlers
 {
     public sealed class HiddenPinEntryHandler : Microsoft.Maui.Handlers.EntryHandler
     {
-        protected override void ConnectHandler(AppCompatEditText platformView)
+        protected override void ConnectHandler(MauiAppCompatEditText platformView)
         {
             base.ConnectHandler(platformView);
             platformView.FocusChange += PlatformView_FocusChange;
         }
 
-        protected override void DisconnectHandler(AppCompatEditText platformView)
+        protected override void DisconnectHandler(MauiAppCompatEditText platformView)
         {
             base.DisconnectHandler(platformView);
             platformView.FocusChange -= PlatformView_FocusChange;
@@ -33,4 +33,3 @@ namespace PINView.Maui.Platforms.Android.Handlers
         }
     }
 }
-

@@ -37,6 +37,9 @@ namespace PINView.Maui
             boxTapGestureRecognizer = new TapGestureRecognizer() { Command = new Command(() => { BoxTapCommandExecute(); }) };
 
             CreateControl();
+
+            AutomationProperties.SetExcludedWithChildren(PINBoxContainer, true);
+            AutomationProperties.SetIsInAccessibleTree(PINBoxContainer, false);
         }
 
         private void HiddenTextEntry_Unfocused(object sender, FocusEventArgs e)
@@ -153,7 +156,7 @@ namespace PINView.Maui
             {
                 boxTemplate.CharLabel.FontSize = ((double)BoxSize / 2);
             }
-            else 
+            else
             {
                 boxTemplate.CharLabel.FontSize = FontSize;
             }
@@ -165,20 +168,6 @@ namespace PINView.Maui
             boxTemplate.CharLabel.FontFamily = FontFamily;
             boxTemplate.CharLabel.FontAttributes = FontAttributes;
             boxTemplate.CharLabel.FontAutoScalingEnabled = FontAutoScalingEnabled;
-
-            if (DeviceInfo.Platform == DevicePlatform.Android)
-            {
-                // Added TapGesture to all components of the Box so that if we tap anywhere
-                // It still gets the focus. In Android things are not working as expected otherwise.
-                boxTemplate.BoxBorder.GestureRecognizers.Add(boxTapGestureRecognizer);
-                boxTemplate.ValueContainer.GestureRecognizers.Add(boxTapGestureRecognizer);
-                boxTemplate.Dot.GestureRecognizers.Add(boxTapGestureRecognizer);
-                boxTemplate.CharLabel.GestureRecognizers.Add(boxTapGestureRecognizer);
-            }
-            else
-            {
-                boxTemplate.GestureRecognizers.Add(boxTapGestureRecognizer);
-            }
 
             boxTemplate.BoxFocusColor = BoxFocusColor;
             boxTemplate.FocusAnimationType = BoxFocusAnimation;

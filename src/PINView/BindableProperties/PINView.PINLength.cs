@@ -29,7 +29,7 @@ namespace PINView.Maui
                 return;
             }
 
-           ((PINView)bindable).CreateControl();
+            ((PINView)bindable).CreateControl();
 
             ((PINView)bindable).OnPropertyChanged(nameof(PINValue));
         }
