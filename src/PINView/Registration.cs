@@ -19,15 +19,16 @@ public static class Registration
         {
             if(view is HiddenPinEntry)
             {
-                // Remove underline
-                handler.PlatformView.BackgroundTintList = ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
+                (view as HiddenPinEntry).Loaded += (sender, args) =>
+                {
+                    // Remove underline
+                    handler.PlatformView.BackgroundTintList = ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
 
-                // Change placeholder text color
-                handler.PlatformView.SetHintTextColor(ColorStateList.ValueOf(Android.Graphics.Color.Transparent));
-
-                handler.PlatformView.SetTextColor(Android.Graphics.Color.Transparent);
-
-                handler.PlatformView.SetCursorVisible(false);
+                    // Change placeholder text color
+                    handler.PlatformView.SetHintTextColor(ColorStateList.ValueOf(Android.Graphics.Color.Transparent));
+                    handler.PlatformView.SetTextColor(Android.Graphics.Color.Transparent);
+                    handler.PlatformView.SetCursorVisible(false);
+                 };
             }
         });
 #endif
@@ -35,15 +36,15 @@ public static class Registration
 #if IOS || MACCATALYST
         Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(HiddenPinEntry), (handler, view) =>
         {
-            if(view is HiddenPinEntry)
+            if (view is HiddenPinEntry)
             {
-                handler.PlatformView.BorderStyle = UIKit.UITextBorderStyle.None;
-
-                handler.PlatformView.BackgroundColor = UIKit.UIColor.Clear;
-
-                handler.PlatformView.TextColor = UIKit.UIColor.Clear;
-
-                handler.PlatformView.TintColor = UIKit.UIColor.Clear;
+                (view as HiddenPinEntry).Loaded += (sender, args) =>
+                {
+                    handler.PlatformView.BorderStyle = UIKit.UITextBorderStyle.None;
+                    handler.PlatformView.BackgroundColor = UIKit.UIColor.Clear;
+                    handler.PlatformView.TextColor = UIKit.UIColor.Clear;
+                    handler.PlatformView.TintColor = UIKit.UIColor.Clear;
+                };
             }
         });
 #endif
@@ -53,7 +54,10 @@ public static class Registration
         {
             if(view is HiddenPinEntry)
             {
-                handler.PlatformView.Opacity = 0;
+                (view as HiddenPinEntry).Loaded += (sender, args) =>
+                {
+                    handler.PlatformView.Opacity = 0;
+                };
             }
         });
 #endif
