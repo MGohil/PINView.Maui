@@ -29,10 +29,11 @@ If you are happy using this control and feeling generous, consider buying me a C
 
 
 ## Steps
-1. Search for PINView.Maui [nuget](https://www.nuget.org/packages/PINView.Maui/) package and install it in your .NET Maui project. 
-2. In your Page, add reference to this package:
+1. Search for PINView.Maui [nuget](https://www.nuget.org/packages/PINView.Maui/) package and install it in your .NET Maui project.
+2. In `MauiProgram.cs` registrer the control on the `MauiAppBuilder` - `.UsePinView()`
+3. In your Page, add reference to this package:
 ```xmlns:pinview="clr-namespace:PINView.Maui;assembly=PINView.Maui"```
-3. Use the control like below:
+4. Use the control like below:
 ```
 <pinview:PINView
     BoxBackgroundColor="#FEDBD0"
